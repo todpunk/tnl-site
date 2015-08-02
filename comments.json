@@ -1,0 +1,18 @@
+[
+    {
+        "text": "This is one comment",
+        "author": "Pete Hunt"
+    },
+    {
+        "text": "This is *another* comment",
+        "author": "Jordan Walke"
+    },
+    {
+        "text": "My name is *Tod* and that's important",
+        "author": "Tod"
+    },
+    {
+        "text": "This comment was added by editing the json file",
+        "author": "Totally Tod"
+    }
+]
