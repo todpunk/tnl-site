@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<!--
+	Read Only by Pixelarity
+	pixelarity.com @pixelarity
+	License: pixelarity.com/license
+-->
+<html>
+	<head>
+		<title>{% block title %}{% endblock %}</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="/assets/css/main.css" />
+		<link rel="stylesheet" href="/assets/css/tnl.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+		{{ extra_headers }}
+	</head>
+	<body>
+		<!-- Header -->
+			<section id="header">
+				<header>
+					<span class="image avatar"><img src="/images/logo.gif" alt="Logo" /></span>
+					<h1 id="logo"><a href="/">Tod and Lorna</a></h1>
+					<p><br />
+					Enjoy the stay =cP</p>
+				</header>
+				<nav id="nav">
+					<ul>
+						<li><a href="/" {% if is_home %}class="active"{% endif %}>Home</a></li>
+						<li><a href="/tnlblog/listing1.doz" {% if is_blog %}class="active"{% endif %}>TnL Blog</a></li>
+						<li><a href="http://networksanitationcommittee.com">NSC (Business)</a></li>
+						<li><a href="https://phonejanitor.com">Phone Janitor</a></li>
+						<li><a href="http://bluntconsultants.com">Blunt Consultants</a></li>
+					</ul>
+				</nav>
+				<footer>
+					<ul class="icons">
+						<li><a href="https://twitter.com/todpunk" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="https://facebook.com/todpunk" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="https://github.com/todpunk" class="icon fa-github"><span class="label">Github</span></a></li>
+						<li><a href="mailto:sitestuff@todandlorna.com" class="icon fa-envelope"><span class="label">Email</span></a></li>
+					</ul>
+				</footer>
+			</section>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- One -->
+						{% block content %}
+						{% endblock %}
+					</div>
+
+				<!-- Footer -->
+				<section id="footer">
+					<div class="container">
+						<ul class="copyright">
+							<li>&copy; 2003-2015, TodandLorna.com is a community effort. Generated with <a href="https://github.com/todpunk/pydozer/">pydozer</a>.</li>
+						</ul>
+					</div>
+				</section>
+			</div>
+
+		<!-- Scripts -->
+		<script src="/assets/js/jquery.min.js"></script>
+		<script src="/assets/js/jquery.scrollzer.min.js"></script>
+		<script src="/assets/js/jquery.scrolly.min.js"></script>
+		<script src="/assets/js/skel.min.js"></script>
+		<script src="/assets/js/util.js"></script>
+		<!--[if lte IE 8]><script src="/assets/js/ie/respond.min.js"></script><![endif]-->
+		<script src="/assets/js/main.js"></script>
+		{{ extra_scripts }}
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+						(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+					m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-17194347-1', 'auto');
+			ga('send', 'pageview');
+		</script>
+	</body>
+</html>

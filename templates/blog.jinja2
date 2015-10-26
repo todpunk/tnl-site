@@ -1,0 +1,20 @@
+{% extends "base.jinja2" %}
+{% block title %} {{ title }}{% endblock %}
+{% block content %}
+                            <section id="one">
+                                <div class="container">
+                                    <header class="major">
+										<h2>{{ title }}</h2>
+                                    </header>
+									<div class="post_author">Written by <a href="author_{{ author.replace(' ', '_') }}1.doz">{{ author }}</a></div>
+									<div class="posted_date">On: {{ posted_date.strftime('%d, %b %Y at %I:%M %p') }}</div>
+									<div class="tags">
+										Tags: {% for tag in tags %}<span class="tag"><a href="tag_{{ tag }}1.doz">{{ tag }}</a></span>&nbsp;{% endfor %}
+									</div>
+									<div class="post_content">
+									{{ hook }}
+									{{ content }}
+									</div>
+                                </div>
+                            </section>
+{% endblock %}
