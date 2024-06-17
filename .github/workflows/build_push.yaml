@@ -26,7 +26,7 @@ jobs:
       - name: Semver Tags Run
         id: semver-tags
         run: |
-          ./.github/scripts/do-chart-release.sh fullrun
+          ./.github/scripts/do-image-release.sh fullrun
       - if: steps.semver-tags.outputs.RELEASED_CHANGES == 'true'
         name: Build and push image to CS Containers
         shell: bash
