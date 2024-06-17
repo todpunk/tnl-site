@@ -39,8 +39,6 @@ fullrun() {
   # This makes a run specific release not json file
   # this will also be added only if there's a version to change
 
-  echo "Last Tags: ${LAST_TAGS_ARRAY[@]}"
-  echo "New Tags: ${NEW_TAGS_ARRAY[@]}"
   
   # For every new tag, update the version in the VERSION.txt file
   for i in "${!NEW_TAGS_ARRAY[@]}"; do
@@ -51,7 +49,11 @@ fullrun() {
     RELEASED_CHANGES="true"
     IFS='/' read -r DIR NEW_TAG <<< ${NEW_TAGS_ARRAY[i]}
     LAST_VERSION=${LAST_TAGS_ARRAY[i]}
+    
+    echo "Last Version: ${LAST_VERSION}"
+    echo "New Tag: ${NEW_TAG}"
     NEW_VERSION=${NEW_TAG#*v}
+    echo "New Version: ${NEW_VERSION}"
     
     # Now update all the things
     # We use the "ci:" prefix because it doesn't count as a version bump
