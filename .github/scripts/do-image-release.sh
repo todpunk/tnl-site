@@ -28,49 +28,43 @@ fullrun() {
 
   # Parse the results out to get the versions we need to update and the release notes
   PUBLISHED=$(yq -P ".New_release_published" <<< $RESULT)
-  NEW_TAGS=$(yq -P ".New_release_git_tag" <<< $RESULT)
-  LAST_TAGS=$(yq -P ".Last_release_version" <<< $RESULT)
+  NEW_TAG=$(yq -P ".New_release_git_tag" <<< $RESULT)
+  LAST_VERSION=$(yq -P ".Last_release_version" <<< $RESULT)
   JSON_RELEASE_NOTES=$(yq -P ".New_release_notes_json" <<< $RESULT)
   RUNDATE=$(date +"%Y-%m-%d-%T")
 
-  PUBLISHED_ARRAY=($(echo $PUBLISHED | tr "," "\n"))
-  NEW_TAGS_ARRAY=($(echo $NEW_TAGS | tr "," "\n"))
-  LAST_TAGS_ARRAY=($(echo $LAST_TAGS | tr "," "\n"))
   # This makes a run specific release not json file
   # this will also be added only if there's a version to change
 
   
-  # For every new tag, update the version in the VERSION.txt file
-  for i in "${!NEW_TAGS_ARRAY[@]}"; do
-    if [[ "${PUBLISHED_ARRAY[i]}" == "false" ]]; then
-      continue
-    fi
-    # If we're here, we have a thing to publish
-    RELEASED_CHANGES="true"
-    IFS='/' read -r DIR NEW_TAG <<< ${NEW_TAGS_ARRAY[i]}
-    LAST_VERSION=${LAST_TAGS_ARRAY[i]}
-    
-    echo "Last Version: ${LAST_VERSION}"
-    echo "New Tag: ${NEW_TAG}"
-    NEW_VERSION=${NEW_TAG#*v}
-    echo "New Version: ${NEW_VERSION}"
-    
-    # Now update all the things
-    # We use the "ci:" prefix because it doesn't count as a version bump
-    # but we do need to tag all these and commit the changes. We could break this up to a second loop I guess.
-    if [[ "${DRYRUN}" == "true" ]]; then
-      echo "Would be changing version $LAST_VERSION to $NEW_VERSION in content/extra_files/VERSION.txt"
-      echo "Would run :"
-      echo " > git add \"content/extra_files/VERSION.txt\""
-      echo " > git commit -m \"ci: adding version ${NEW_TAG} to content/extra_files/VERSION.txt\""
-    else
-      echo "Changing version $LAST_VERSION to $NEW_VERSION in content/extra_files/VERSION.txt"
-      # replace the version in the VERSION.txt file
-      sed -i "s/.*/${NEW_VERSION}/" "content/extra_files/VERSION.txt"
-      git add "content/extra_files/VERSION.txt"
-      git commit -m "ci: adding version ${NEW_TAG} to content/extra_files/VERSION.txt"
-    fi
-  done
+  # Update the version in the VERSION.txt file if needed
+  if [[ "${PUBLISHED_ARRAY[i]}" == "false" ]]; then
+    echo "No new version to publish"
+    exit 0
+  fi
+  # If we're here, we have a thing to publish
+  RELEASED_CHANGES="true"
+
+  echo "Last Version: ${LAST_VERSION}"
+  echo "New Tag: ${NEW_TAG}"
+  NEW_VERSION=${NEW_TAG#*v}
+  echo "New Version: ${NEW_VERSION}"
+
+  # Now update all the things
+  # We use the "ci:" prefix because it doesn't count as a version bump
+  # but we do need to tag all these and commit the changes. We could break this up to a second loop I guess.
+  if [[ "${DRYRUN}" == "true" ]]; then
+    echo "Would be changing version $LAST_VERSION to $NEW_VERSION in content/extra_files/VERSION.txt"
+    echo "Would run :"
+    echo " > git add \"content/extra_files/VERSION.txt\""
+    echo " > git commit -m \"ci: adding version ${NEW_TAG} to content/extra_files/VERSION.txt\""
+  else
+    echo "Changing version $LAST_VERSION to $NEW_VERSION in content/extra_files/VERSION.txt"
+    # replace the version in the VERSION.txt file
+    sed -i "s/.*/${NEW_VERSION}/" "content/extra_files/VERSION.txt"
+    git add "content/extra_files/VERSION.txt"
+    git commit -m "ci: adding version ${NEW_TAG} to content/extra_files/VERSION.txt"
+  fi
   
   if [[ "${DRYRUN}" == "true" ]]; then
     echo "Would git push here"
