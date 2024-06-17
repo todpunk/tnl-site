@@ -11,6 +11,8 @@ FROM caddy:2.8.4-alpine
 
 WORKDIR /site 
 
+RUN mkdir /site/logs
+
 COPY Caddyfile /etc/caddy/Caddyfile 
 COPY --from=builder ./build/generated ./root
 
