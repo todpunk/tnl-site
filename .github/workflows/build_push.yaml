@@ -32,8 +32,8 @@ jobs:
         id: semver-tags
         run: |
           ./.github/scripts/do-image-release.sh fullrun
-      - if: steps.semver-tags.outputs.RELEASED_CHANGES == 'true'
-        name: Build and push image to CS Containers
+      # - if: steps.semver-tags.outputs.RELEASED_CHANGES == 'true'
+      - name: Build and push image to CS Containers
         shell: bash
         run: |
           echo "${{ secrets.CONTAINERS_AUTH_PW }}" | docker login --username ${{ secrets.CONTAINERS_AUTH_USER }} --password-stdin containers.catalystsquad.com
