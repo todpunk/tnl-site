@@ -7,19 +7,19 @@
 			</header>
 			{% for post in posts %}
 			<div class="author_post">
-				<div class="post_title"><a href="{{ post.filename }}.doz">{{ post.title }}</a></div>
-				<div class="posted_date">posted: {{ post.posted_date.strftime('%d, %b %Y at %I:%M %p') }}</div>
+				<div class="post_title"><a href="{{ post.slugify }}.html">{{ post.Title }}</a></div>
+				<div class="posted_date">posted: {{ post.PostedDate.strftime('%d, %b %Y at %I:%M %p') }}</div>
 				{{ post.hook }}
 			</div>
 			{% endfor %}
 			{% if total_pages > 1 %}
 				<div id = 'page_numbers'>Pages
 				{% if page_num > 1 %}
-					<span class="pages"><a href="listing{{ page_num - 1 }}.doz">&lt;</a></span>
+					<span class="pages"><a href="listing{{ page_num - 1 }}.html">&lt;</a></span>
 				{% endif %}
 					<span class="pages current_page">{{ page_num }}</span>
 				{% if page_num < total_pages %}
-					<span class="pages"><a href="listing{{ page_num + 1 }}.doz">&gt;</a></span>
+					<span class="pages"><a href="listing{{ page_num + 1 }}.html">&gt;</a></span>
 				{% endif %}
 				</div>
 			{% endif %}

@@ -7,9 +7,9 @@
 			<header class="blog_listing">
 				<h2>Tags in Articles from TnL</h2>
 			</header>
-			{% for tag, posts in tags.iteritems() %}
+			{% for tag, posts in tags.items() %}
 				<div class="tag_list_item">
-					<h3><a href="tag_{{ tag.replace(' ', '_') }}1.doz">{{ tag }}: {{ posts|length }} posts</a></h3>
+					<h3><a href="tag_{{ tag.replace(' ', '_') }}1.html">{{ tag }}: {{ posts|length }} posts</a></h3>
 				</div>
 			{% endfor %}
 		</div>

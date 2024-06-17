@@ -7,7 +7,7 @@
 			<header class="blog_listing">
 				<h2>Authors in Articles from TnL</h2>
 			</header>
-			{% for author, posts in authors.iteritems() %}
+			{% for author, posts in authors.items() %}
 				<div class="author_list_item">
 					<h3><a href="{{ author.replace(' ', '_') }}1.html">{{ author }}: {{ posts|length }} posts</a></h3>
 				</div>
