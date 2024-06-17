@@ -36,6 +36,6 @@ jobs:
       - name: Build and push image to CS Containers
         shell: bash
         run: |
-          echo "${{ secrets.CONTAINERS_AUTH_PW }}" | docker login --username ${{ secrets.CONTAINERS_AUTH_USER }} --password-stdin containers.catalystsquad.com
+          echo "${{ secrets.CONTAINERS_AUTH_PW }}" | docker login --username ${{ secrets.CONTAINERS_AUTH_USER }} --password-stdin https://containers.catalystsquad.com
           docker build -t containers.catalystsquad.com/tnl-site:latest -t containers.catalystsquad.com/tnl-site:${{ steps.semver-tags.outputs.NEW_VERSION }}
           docker image push --all-tags containers.catalystsquad.com/tnl-site
