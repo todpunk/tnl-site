@@ -39,9 +39,10 @@ fullrun() {
   # This makes a run specific release not json file
   # this will also be added only if there's a version to change
 
-  echo "Last Tages: ${LAST_TAGS_ARRAY}"
+  echo "Last Tags: ${LAST_TAGS_ARRAY[@]}"
+  echo "New Tags: ${NEW_TAGS_ARRAY[@]}"
   
-  # For every new tag, update the chart.yaml
+  # For every new tag, update the version in the VERSION.txt file
   for i in "${!NEW_TAGS_ARRAY[@]}"; do
     if [[ "${PUBLISHED_ARRAY[i]}" == "false" ]]; then
       continue
@@ -62,7 +63,7 @@ fullrun() {
       echo " > git commit -m \"ci: adding version ${NEW_TAG} to content/extra_files/VERSION.txt\""
     else
       echo "Changing version $LAST_VERSION to $NEW_VERSION in content/extra_files/VERSION.txt"
-      # replace both version and appVersion in the Chart.yaml
+      # replace the version in the VERSION.txt file
       sed -i "s/.*/${NEW_VERSION}/" "content/extra_files/VERSION.txt"
       git add "content/extra_files/VERSION.txt"
       git commit -m "ci: adding version ${NEW_TAG} to content/extra_files/VERSION.txt"
