@@ -4,12 +4,12 @@
 	<section id="one">
 		<div class="container">
 			<header class="blog_listing">
-				<h2>Articles from TnL by: {{ author }}</h2>
+				<h2>Articles from TnL by: {{ Author }}</h2>
 			</header>
 			{% for post in posts %}
 				<div class="author_post">
-					<h3 class="post_title"><a href="{{ post.filename }}.html">{{ post.title }}</a></h3>
-					<div class="posted_date">posted: {{ post.posted_date.strftime('%d, %b %Y at %I:%M %p') }}</div>
+					<h3 class="post_title"><a href="{{ post.slugify }}.html">{{ post.Title }}</a></h3>
+					<div class="posted_date">posted: {{ post.PostedDate.strftime('%d, %b %Y at %I:%M %p') }}</div>
 					{{ post.hook }}
 				</div>
 			{% endfor %}
