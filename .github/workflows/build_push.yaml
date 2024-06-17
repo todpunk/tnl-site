@@ -28,15 +28,14 @@ jobs:
       - name: Get semver-tags
         run: |
           wget -c https://github.com/catalystsquad/semver-tags/releases/download/v0.3.3/semver-tags.tar.gz -O - | tar -xz
-      # - name: Semver Tags Run
-      #   id: semver-tags
-      #   run: |
-      #     ./.github/scripts/do-image-release.sh fullrun
-      # - if: steps.semver-tags.outputs.RELEASED_CHANGES == 'true'
-      - name: Build and push image to CS Containers
+      - name: Semver Tags Run
+        id: semver-tags
+        run: |
+          ./.github/scripts/do-image-release.sh fullrun
+      - if: steps.semver-tags.outputs.RELEASED_CHANGES == 'true'
+        name: Build and push image to CS Containers
         shell: bash
         run: |
           echo "${{ secrets.CONTAINERS_AUTH_PW }}" | docker login --username ${{ secrets.CONTAINERS_AUTH_USER }} --password-stdin https://containers.catalystsquad.com
-          #docker build -t containers.catalystsquad.com/tnl-site:latest -t containers.catalystsquad.com/tnl-site:${{ steps.semver-tags.outputs.NEW_VERSION }}
-          docker build -t containers.catalystsquad.com/tnl-site:latest -t containers.catalystsquad.com/tnl-site:0.2.10
+          docker build . -t containers.catalystsquad.com/tnl-site:latest -t containers.catalystsquad.com/tnl-site:${{ steps.semver-tags.outputs.NEW_VERSION }}
           docker image push --all-tags containers.catalystsquad.com/tnl-site
