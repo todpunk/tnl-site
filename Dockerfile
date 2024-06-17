@@ -15,4 +15,3 @@ RUN mkdir /site/logs
 
 COPY Caddyfile /etc/caddy/Caddyfile 
 COPY --from=builder ./build/generated ./root
-
