@@ -38,6 +38,8 @@ fullrun() {
   LAST_TAGS_ARRAY=($(echo $LAST_TAGS | tr "," "\n"))
   # This makes a run specific release not json file
   # this will also be added only if there's a version to change
+
+  echo "Last Tages: ${LAST_TAGS_ARRAY}"
   
   # For every new tag, update the chart.yaml
   for i in "${!NEW_TAGS_ARRAY[@]}"; do
