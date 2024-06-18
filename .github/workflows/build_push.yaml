@@ -1,6 +1,8 @@
 name: Pull Request
 on:
   pull_request:
+    types:
+      - closed
     branches:
       - master
     paths-ignore:
@@ -8,7 +10,6 @@ on:
 jobs:
   version-and-push:
     name: Version and Push
-    if: github.event.pull_request.draft == false
     runs-on: ubuntu-latest
     steps:
       - name: Extract branch name
