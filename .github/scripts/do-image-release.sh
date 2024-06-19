@@ -61,7 +61,11 @@ fullrun() {
   else
     echo "Changing version $LAST_VERSION to $NEW_VERSION in content/extra_files/VERSION.txt"
     # replace the version in the VERSION.txt file
+    echo "Before and after:"
+    cat content/extra_files/VERSION.txt
     sed -i "s/.*/${NEW_VERSION}/" "content/extra_files/VERSION.txt"
+    cat content/extra_files/VERSION.txt
+
     git add "content/extra_files/VERSION.txt"
     git commit -m "ci: adding version ${NEW_TAG} to content/extra_files/VERSION.txt"
   fi
