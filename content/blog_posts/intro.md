@@ -9,3 +9,4 @@ Experiments, rants, articles, etc. This is a personal site for us, you don't nee
 If you have commentary, we don't keep that on the site.  Feel free to drop us an email or hit us up on other various places.  We are busy people, so don't expect a prompt response.  Worry not, your plight is minor.  Let it go a bit, it will do you good.
 Good luck, and <a href="/tnlblog/listing1.html">read more</a> with wreckless abandon!
 
+
