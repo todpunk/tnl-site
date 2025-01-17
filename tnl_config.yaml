@@ -16,6 +16,7 @@ blogConfig:
     listingTemplate: "listing.jinja2"
     listingPaginationNum: 5
     listingKeysNeeded: ['hook']
+    atomFeeds: True
     tagsTemplate: "tags.jinja2"
     tagTemplate: "tag.jinja2"
     tagPaginationNum: 5
