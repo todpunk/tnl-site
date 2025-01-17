@@ -22,7 +22,7 @@ jobs:
           token: ${{ secrets.AUTOMATION_PAT }}
           fetch-depth: 0
           #ref: '${{ steps.extract_branch.outputs.branch }}'
-          ref: 'master'
+          ref: 'main'
       - name: setup git config
         run: |
           git config --global user.name "Tod Hansmann (automation)"
