@@ -29,7 +29,7 @@ jobs:
           git config --global user.email "<githubpub@todandlorna.com>"
       - name: Get semver-tags
         run: |
-          wget -c https://github.com/catalystsquad/semver-tags/releases/download/v0.3.3/semver-tags.tar.gz -O - | tar -xz
+          wget -c https://github.com/catalystsquad/semver-tags/releases/download/v0.3.5/semver-tags.tar.gz -O - | tar -xz
       - name: Semver Tags Run
         id: semver-tags
         run: |
@@ -41,3 +41,14 @@ jobs:
           echo "${{ secrets.CONTAINERS_AUTH_PW }}" | docker login --username ${{ secrets.CONTAINERS_AUTH_USER }} --password-stdin https://containers.catalystsquad.com
           docker build . -t containers.catalystsquad.com/tnl-site:latest -t containers.catalystsquad.com/tnl-site:${{ steps.semver-tags.outputs.NEW_VERSION }}
           docker image push --all-tags containers.catalystsquad.com/tnl-site
+      - name: Do CI
+        env:
+          CI_HOST_ADDRESS: ${{ secrets.CI_HOST_ADDRESS }}
+          CI_HOST_USER: ${{ secrets.CI_HOST_USER }}
+          CI_HOST_PORT: ${{ secrets.CI_HOST_PORT }}
+          CI_SSH_KEY: ${{ secrets.CI_SSH_KEY }}
+          CI_KUBECONFIG: ${{ secrets.CI_KUBECONFIG }}
+          REACTORCIDE_JOB_REPO_URL: git@github.com:todpunk/tnl-site.git
+          REACTORCIDE_JOB_ENTRYPOINT: ci/reactorcide-job.sh
+        run: |
+          ci/release.sh

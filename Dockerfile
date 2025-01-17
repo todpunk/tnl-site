@@ -7,10 +7,9 @@ COPY . .
 RUN python -m pysocha build -c tnl_config.yaml
 
 
-FROM caddy:2.8.4-alpine
+FROM caddy:2.9.1-alpine
 
 WORKDIR /site 
-
 RUN mkdir /site/logs
 
 COPY Caddyfile /etc/caddy/Caddyfile 
