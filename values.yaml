@@ -1,0 +1,8 @@
+# For the catalyst-helm/pysocha-site helm chart
+# See https://github.com/catalystcommunity/chart-pysocha-site
+
+domain: todandlorna.com
+sitefilePath: "/site/root"
+image:
+  repository: containers.catalystsquad.com/tnl-site
+  # tag will be provided by --set image.tag=...
