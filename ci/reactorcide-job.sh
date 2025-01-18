@@ -19,4 +19,4 @@ helm upgrade \
   tnl-site \
   --set image.tag=${VERSION} \
   -f ${REACTORCIDE_REPOROOT}/values.yaml catalyst-helm/pysocha-site \
-  --version 1.0.1
+  --version 1.0.2

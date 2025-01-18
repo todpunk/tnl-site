@@ -1,0 +1,25 @@
+apiVersion: skaffold/v4beta11
+kind: Config
+metadata:
+  name: tnl-site
+build:
+  artifacts:
+    - image: tnl-site
+      context: .
+      docker:
+        dockerfile: Dockerfile
+deploy:
+  helm:
+    releases:
+      - name: tnl-site
+        # This needs to be changed to the local path on your machine
+        chartPath: ../../catalystcommunity/chart-pysocha-site/chart/
+        namespace: pysochadev
+        createNamespace: true
+        skipBuildDependencies: true
+        recreatePods: true
+        wait: true
+        valuesFiles:
+          - ./values.yaml
+        setValues:
+          image.repository: tnl-site
