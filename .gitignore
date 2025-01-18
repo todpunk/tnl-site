@@ -177,3 +177,6 @@ dist
 ehthumbs.db
 
 *.pyc
+
+# To allow for local changes without committing accidentally
+skaffold.yaml
