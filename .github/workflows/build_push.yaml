@@ -48,6 +48,8 @@ jobs:
           CI_HOST_PORT: ${{ secrets.CI_HOST_PORT }}
           CI_SSH_KEY: ${{ secrets.CI_SSH_KEY }}
           CI_KUBECONFIG: ${{ secrets.CI_KUBECONFIG }}
+          CONTAINERS_AUTH_USER: ${{ secrets.CONTAINERS_AUTH_USER }}
+          CONTAINERS_AUTH_PW: ${{ secrets.CONTAINERS_AUTH_PW }}
           REACTORCIDE_JOB_REPO_URL: git@github.com:todpunk/tnl-site.git
           REACTORCIDE_JOB_ENTRYPOINT: ci/reactorcide-job.sh
         run: |

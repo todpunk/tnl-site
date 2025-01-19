@@ -6,6 +6,8 @@ echo "REACTORCIDE_JOB_REPO_URL=${REACTORCIDE_JOB_REPO_URL}" >> runnerenv.sh
 touch jobenv.sh
 echo "REACTORCIDE_JOB_ENTRYPOINT=${REACTORCIDE_JOB_ENTRYPOINT}" >> jobenv.sh
 echo "CI_KUBECONFIG=\"${CI_KUBECONFIG}\"" >> jobenv.sh
+echo "CONTAINERS_AUTH_USER=\"${CONTAINERS_AUTH_USER}\"" >> jobenv.sh
+echo "CONTAINERS_AUTH_PW=\"${CONTAINERS_AUTH_PW}\"" >> jobenv.sh
 
 touch cisshkey
 echo "${CI_SSH_KEY}" >> cisshkey
