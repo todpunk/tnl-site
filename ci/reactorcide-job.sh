@@ -11,6 +11,9 @@ helm repo update
 
 VERSION="$(cat ${REACTORCIDE_REPOROOT}/content/extra_files/VERSION.txt)"
 
+kubectl create namespace tnl-site --dry-run=client -o yaml | kubectl apply -f -
+kubectl create secret --namespace tnl-site docker-registry regcred --docker-server=containers.catalystsquad.com --docker-username="${{ secrets.CONTAINERS_AUTH_USER }}" --docker-password="${{ secrets.CONTAINERS_AUTH_PW }}" --docker-email="githubpub@todandlorna.com"
+
 # Now Helm Chart
 helm upgrade \
   --install \
@@ -18,5 +21,6 @@ helm upgrade \
   --namespace tnl-site \
   tnl-site \
   --set image.tag=${VERSION} \
+  --set imagePullSecrets[0].name=regcred \
   -f ${REACTORCIDE_REPOROOT}/values.yaml catalyst-helm/pysocha-site \
   --version 1.0.2
