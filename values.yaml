@@ -6,3 +6,4 @@ sitefilePath: "/site/root"
 image:
   repository: containerregistry.catalystsquad.com/tnl-site
   # tag will be provided by --set image.tag=...
+
