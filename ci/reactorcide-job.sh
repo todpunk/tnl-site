@@ -12,7 +12,7 @@ helm repo update
 VERSION="$(cat ${REACTORCIDE_REPOROOT}/content/extra_files/VERSION.txt)"
 
 kubectl create namespace tnl-site --dry-run=client -o yaml | kubectl apply -f -
-kubectl create secret --namespace tnl-site docker-registry regcred --docker-server=containers.catalystsquad.com --docker-username="${CONTAINERS_AUTH_USER}" --docker-password="${CONTAINERS_AUTH_PW}" --docker-email="githubpub@todandlorna.com"
+kubectl create secret --namespace tnl-site docker-registry regcred --docker-server=containerregistry.catalystsquad.com --docker-username="${CONTAINERS_AUTH_USER}" --docker-password="${CONTAINERS_AUTH_PW}" --docker-email="githubpub@todandlorna.com"
 
 # Now Helm Chart
 helm upgrade \

@@ -38,9 +38,9 @@ jobs:
         name: Build and push image to CS Containers
         shell: bash
         run: |
-          echo "${{ secrets.CONTAINERS_AUTH_PW }}" | docker login --username ${{ secrets.CONTAINERS_AUTH_USER }} --password-stdin https://containers.catalystsquad.com
-          docker build . -t containers.catalystsquad.com/tnl-site:latest -t containers.catalystsquad.com/tnl-site:${{ steps.semver-tags.outputs.NEW_VERSION }}
-          docker image push --all-tags containers.catalystsquad.com/tnl-site
+          echo "${{ secrets.CONTAINERS_AUTH_PW }}" | docker login --username ${{ secrets.CONTAINERS_AUTH_USER }} --password-stdin https://containerregistry.catalystsquad.com
+          docker build . -t containerregistry.catalystsquad.com/tnl-site:latest -t containerregistry.catalystsquad.com/tnl-site:${{ steps.semver-tags.outputs.NEW_VERSION }}
+          docker image push --all-tags containerregistry.catalystsquad.com/tnl-site
       - name: Do CI
         env:
           CI_HOST_ADDRESS: ${{ secrets.CI_HOST_ADDRESS }}
