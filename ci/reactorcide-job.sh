@@ -33,4 +33,4 @@ helm upgrade \
   --set image.tag=${VERSION} \
   --set imagePullSecrets[0].name=regcred \
   -f ${REACTORCIDE_REPOROOT}/values.yaml catalyst-helm/pysocha-site \
-  --version 1.0.2
+  --version 1.1.1
