@@ -3,6 +3,7 @@ contentDir: "content"
 outputDir: "generated"
 templatesDir: "templates"
 siteTitle: "Tod and Lorna .com"
+siteAddress: "https://todandlorna.com/"
 descending: True,
 defaultExtension: ".html"
 startPage: "index.html"
