@@ -9,7 +9,7 @@
 			<div class="author_post">
 				<div class="post_title"><a href="{{ post.slugify }}">{{ post.Title }}</a></div>
 				<div class="posted_date">posted: {{ post.PostedDate.strftime('%d, %b %Y at %I:%M %p') }}</div>
-				{{ post.hook }}
+				{{ post.Hook }}
 			</div>
 			{% endfor %}
 			{% if total_pages > 1 %}
