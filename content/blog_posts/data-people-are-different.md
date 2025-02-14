@@ -1,7 +1,7 @@
 ---
 Author: 'Tod Hansmann'
 Title: "Data People are Different"
-PostedDate: 'Tue Jan 28 19:52:00 MST 2025'
+PostedDate: 'Tue Feb 11 18:30:00 MST 2025'
 Tags: ['rants', 'opinions', 'data', 'industry']
 Hook: "<p>Some data people think they're just software engineers with a different focus, while some software engineers think data people have no idea how to code at all, and all of this is both true and not and silly. The confusion needs to stop, because working together is hard enough without the egos and title gore and miscommunications.</p>"
 ---
