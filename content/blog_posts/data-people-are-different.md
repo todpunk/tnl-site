@@ -13,7 +13,7 @@ Data people has overlap with other coding disciplines, but not as much as some w
 
 You can tell a data person by what their data storage they work with is in. So if it's a normal database, that's a Database Administrator or someone with an "Infra" or "Devops" role (those aren't roles, but also are, yes). If it's a list of Apache Projects or anything from a "Data Warehouse/Lake/Etc" company, that's a data person. If it's someone using a Jupyter Notebook (or one of the less known but all-but-dead other Notebooks) that is definitely a data person.
 
-Note how this isn't passing a judgement. See how that is, talking about people as they are without saying they're bad? Let's fix that. Data people can be awful, and data people can be amazing. Just like every software industry job! Except Scrum Masters or any "person" peddling "SAfe" (and yes, that's capitalized correctly, don't look it up, save yourself).
+Note how this isn't passing a judgement. See how that is, talking about people as they are without saying they're bad? Let's fix that. Data people can be awful, and data people can be amazing. Just like every software industry job! Except Scrum Masters or any "person" peddling "SAFe" (and yes, that's capitalized correctly, don't look it up, save yourself).
 
 ## The problems with data people
 
@@ -23,7 +23,7 @@ You see, data people break processes of most other software engineering. Even Fr
 
 Let me translate that from data person (of a particular kind, I'll note, yes) to more common software engineer parlance. "I have written a set of scripts that solve the problem, I don't know how to run this anywhere else because that is not my role and not my interest, can you help me?" Somebody is going to read this and think, "well, they should just say it like that." That person needs to sit down and think about what effort they've put into translating their own requests in their foreign audience's vernacular. Humans suck at communicating anything complex, and most of it is complex. Computer nerds like we all are tend to suck even more. Have some empathy.
 
-The reason they don't ask that way is because they're just as human as the rest of us. Annoying? Yes. Naive? For some perspectives and definitions, yes. Is any of tha that helpful? **No!**
+The reason they don't ask that way is because they're just as human as the rest of us. Annoying? Sure, why not. Naive? For some perspectives and definitions, yes. Is any of tha that helpful? **No!**
 
 ## Data people are here to do what you can't
 
@@ -31,7 +31,7 @@ I once managed over half a dozen PhDs in Math and Physics. They were brilliant, 
 
 You'd think they would have communicated better about software and deployments and stuff. To an extent they did, but they didn't function as well as you might expect. This is because the problems trying to be solved are _different_ and they need to be _understood_ by each other, or at least one side. I'm personally putting that on software engineering, because there's more of us and we need to be better glue. A lot of software engineers naively believe their role is about writing code. No. Code is not the value anyone wants. No business has ever hired me to write code, but I have written code at every professional job I've ever had. They might _say_ they want me to write code, but what they actually all wanted was for me to provide value, often by writing code as a leverage point to produce it.
 
-No, that's not an obvious quip. I can't tell you the enormous majority of software devs that think their code is their worth. If I can do the same thing you did with 800 lines of code in an excel spreadsheet, which is more valuable? You can't answer that, because neither _are the value_ without the _context_ and the _problem_, but we're typically having that debate instead of what problems are valuable to solve. It's a dumb debate.
+No, that's not an obvious quip. I can't tell you the enormous majority of software devs that think their code is their worth. If you can do something with 800 lines of code and I can do it in an excel spreadsheet, which is more valuable? You can't answer that, because neither _are the value_ without the _context_ and the _problem_, but we're typically having that debate instead of what problems are valuable to solve. It's a dumb debate.
 
 Software engineers are there to glue knowledge of one domain with knowledge of another domain, to translate the interactions between computer and _stuff_. If you don't understand how to garden, you can't automate a robotic garden. You either need to get someone to tell you how to garden, or do research and learn, and _that_ is the value you're providing.
 
@@ -55,7 +55,7 @@ We need two things:
 - Empathy for the gardeners of data
 - Solutions that hold them accountable for what they can manage, but not for what is just a waste
 
-Sound like internal software engineering of all kinds? It is. We need more of that. Don't make other software peeps, be they data people or not, worry about what isn't valuable for them to worry about. You're just making them waste time and money, making everyone sad, and widening the gap between now and solution.
+Sound like internal software engineering of all kinds? It is. We need more of that. Don't make other software peeps, be they data people or not, worry about what isn't valuable for them to worry about. You're just making them waste time and money, making everyone sad, and widening the gap between now and solution. I don't make you worry about what assembly instructions your code is producing through the compiler if it's not relevant to your work. Why would we do similar to anyone else?
 
 Get in their world. Understand the whole flow and lifecycle of the things they're trying to do. Is it a batch job that needs to run every day at 3 AM? Are they asking to do that in Airflow? Maybe that's the right tool, or maybe a simple cron job or a kubernetes cron job or any other number of things is the right thing. Discuss trade-offs. That's what engineering _is_. It is _not_ discussing trade-offs that you prefer. Your tools are inadequate until your _users_ say they are adequate, not the other way around.
 
