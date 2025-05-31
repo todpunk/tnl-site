@@ -1,8 +1,8 @@
 ---
 Author: 'Tod Hansmann'
-Title: "TITLE"
+Title: 'TITLE'
 PostedDate: 'Tue Feb 11 18:30:00 MST 2025'
-Tags: ["TAGS","TAGS"]
+Tags: ['TAGS','TAGS']
 Hook: "<p>HOOK</p>"
 ---
 CONTENT

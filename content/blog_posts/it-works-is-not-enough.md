@@ -1,8 +1,8 @@
 ---
 Author: 'Tod Hansmann'
-Title: "It Works is Never Enough"
-PostedDate: 'Tue Feb 11 18:30:00 MST 2025'
-Tags: ["engineering","rants"]
+Title: 'It Works is Never Enough'
+PostedDate: 'Sat May 31 14:30:00 MST 2025'
+Tags: ['engineering','rants', 'opinions']
 Hook: "<p>There are a lot of different software engineers out there, with different values. One of those values is sometimes \"speed\" measured only in the initial task work, and expressed in stupid statements like the famous \"move fast and break things.\" The attitude of creating something working and then polishing it later is a problem. It misses the point.</p>"
 ---
 ## Working Software Isn't Real
