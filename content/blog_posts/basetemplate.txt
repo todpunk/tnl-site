@@ -1,7 +1,7 @@
 ---
 Author: 'Tod Hansmann'
 Title: 'TITLE'
-PostedDate: 'Tue May 31 18:30:00 MST 2025'
+PostedDate: 'Sun Aug 31 8:30:00 MST 2025'
 Tags: ['TAGS','TAGS']
 Hook: "<p>HOOK</p>"
 ---
