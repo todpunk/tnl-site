@@ -5,7 +5,7 @@ PostedDate: 'Tue Feb 24 19:32:00 MST 2025'
 Tags: ["engineering", "testing", "data", "workflows"]
 Hook: "<p>I have incepted a pattern at a few big tech companies that my friends worked at after they did some side stuff with me. It makes your life testing against a database way easier. You'll never look back once you've got it going.</p>"
 ---
-Originally I can up with this while working at Mobilsense. As a Python shop, they were updating to a newer codebase than the one they started in 2002, and considered a variety of things to migrate to. The short version is we had about I believe about 8,000 tests at the time, and they all ran in under 20 minutes on a single process running against postgres as the database. No mocking of databases.
+Originally I came up with this while working at Mobilsense. As a Python shop, they were updating to a newer codebase than the one they started in 2002, and considered a variety of things to migrate to. The short version is we had about I believe about 8,000 tests at the time, and they all ran in under 20 minutes on a single process running against postgres as the database. No mocking of databases.
 
 Sincerely, don't mock your database. In the age of containers especially you have no excuse, but it's also pretty easy to create a new DB from scratch. Do the work. Anyway, once you have that, how do you test against it when it's largely empty? This also isn't Python specific, but it's easy there. Let's go over it.
 
@@ -25,7 +25,7 @@ The magic of this pattern is that you just create a dictionary of data, and pass
 
 Don't do that.
 
-Start writing the `CreateUser` function, sure. Then write the `CreateThingB` and `CreateThingA` functions, but here's the good bit. `CreateUser` doesn't need any data. It gets passed a map or a data object of some kind, and it creates the ORM object or the SQL statement or whatever flavor you is (I told you it's not Python specific, it's also not DB approach specific). 
+Start writing the `CreateUser` function, sure. Then write the `CreateThingB` and `CreateThingA` functions, but here's the good bit. `CreateUser` doesn't need any data. It gets passed a map or a data object of some kind, and it creates the ORM object or the SQL statement or whatever flavor you use (I told you it's not Python specific, it's also not DB approach specific). 
 
 You will need to keep track of some number and maybe have a randomizer. So you get a `CreateUser` call with an entirely empty map. That just means that you don't care what's in it, it just needs to be valid. Great, so you create a username of "testuser1" where 1 was actually just the "usercounter" variable juxtaposed in. You also want to have one check, that if `user_id` is in the map, `CreateUser` gets that from the DB instead of creating it (or cache, or whatever you want). You'll see why in a moment.
 

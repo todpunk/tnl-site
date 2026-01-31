@@ -9,7 +9,7 @@ Hook: "<p>So many programmers I know have their favorite language, and they real
 
 You may think I'm being overly harsh, but you already agree with me. Every programmer also has a much longer list of programming languages they find painful, or ugly, or whatever. The difference between the language you love and the ones you hate is not a set of features, it's you. It's the value differences.
 
-Bryan Cantrill has a wonderful talk about the [values of platforms and languages](https://www.youtube.com/watch?v=2wZ1pCpJUIM), or if you prefer reading there's a related podcast interview about software as a reflection of values](https://corecursive.com/024-software-as-a-reflection-of-values-with-bryan-cantrill/). I'd love for you to experience one or both of them. They're much nicer than my rant here, but on a different tangent or I'd just link you there and be done.
+Bryan Cantrill has a wonderful talk about the [values of platforms and languages](https://www.youtube.com/watch?v=2wZ1pCpJUIM), or if you prefer reading [there's a related podcast interview about software as a reflection of values](https://corecursive.com/024-software-as-a-reflection-of-values-with-bryan-cantrill/). I'd love for you to experience one or both of them. They're much nicer than my rant here, but on a different tangent or I'd just link you there and be done.
 
 Regardless, your programming language has a set of values, and your values priority list align best with that language (so far). This doesn't mean your programming language isn't stupid, it means the particular brand of stupidity it exhibits is one you prefer to live with.
 
