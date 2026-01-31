@@ -23,7 +23,7 @@ You see, data people break processes of most other software engineering. Even Fr
 
 Let me translate that from data person (of a particular kind, I'll note, yes) to more common software engineer parlance. "I have written a set of scripts that solve the problem, I don't know how to run this anywhere else because that is not my role and not my interest, can you help me?" Somebody is going to read this and think, "well, they should just say it like that." That person needs to sit down and think about what effort they've put into translating their own requests in their foreign audience's vernacular. Humans suck at communicating anything complex, and most of it is complex. Computer nerds like we all are tend to suck even more. Have some empathy.
 
-The reason they don't ask that way is because they're just as human as the rest of us. Annoying? Sure, why not. Naive? For some perspectives and definitions, yes. Is any of tha that helpful? **No!**
+The reason they don't ask that way is because they're just as human as the rest of us. Annoying? Sure, why not. Naive? For some perspectives and definitions, yes. Is any of that helpful? **No!**
 
 ## Data people are here to do what you can't
 

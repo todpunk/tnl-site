@@ -25,7 +25,7 @@ Of course the answer is yes, there's exceptions that linting can't handle. Still
 
 AI didn't change this, though. I don't care about the quality of anyone's utility scripts they use for themselves. I do care if you're trying to get those scripts built into some software package my mom is going to end up using.
 
-This is made way easier if you just imagine AI code tools as interns. Does the quality of the intern's output matter? If it does, correct it as they go, find the prompting to prevent it, etc. If they can't learn, as many a human can't, constrain their output with tools. The fact that it's an LLM doing the production just changes the wall-clock time. You're still responsible for their output just like the intern shouldn't be putting anything in production that you aren't taking responsibiity and ownership for.
+This is made way easier if you just imagine AI code tools as interns. Does the quality of the intern's output matter? If it does, correct it as they go, find the prompting to prevent it, etc. If they can't learn, as many a human can't, constrain their output with tools. The fact that it's an LLM doing the production just changes the wall-clock time. You're still responsible for their output just like the intern shouldn't be putting anything in production that you aren't taking responsibility and ownership for.
 
 If the intern can push to production, is it the intern's fault when they create a mess? Maybe. Is it the intern's _responsibility_ to fix it? No. Never. Even if we make them do so, that's us taking responsibility by making them, they can't have the incentive to need to. They might, in fact, voluntarily do so, but it's still not their responsibility. Why on earth would I make an LLM responsible for code quality that matters?
 
