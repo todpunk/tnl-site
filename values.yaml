@@ -4,6 +4,9 @@
 domain: todandlorna.com
 sitefilePath: "/site/root"
 image:
-  repository: containerregistry.catalystsquad.com/tnl-site
+  # Repository is set via --set in the reactorcide job to use internal registry
+  # Internal: 10.16.0.1:5000/private/todpunk/tnl-site
+  # External: containers.catalystsquad.com/private/todpunk/tnl-site
+  repository: 10.16.0.1:5000/private/todpunk/tnl-site
   # tag will be provided by --set image.tag=...
 

@@ -1,0 +1,14 @@
+name: version-bump
+image: containers.catalystsquad.com/public/reactorcide/runnerbase:dev
+source:
+  type: git
+  url: https://github.com/todpunk/tnl-site.git
+  ref: main
+command: runnerlib run --job-command "bash /job/src/jobs/scripts/version-bump.sh"
+environment:
+  # Git configuration for commits
+  GIT_USER_NAME: "Tod Hansmann (automation)"
+  GIT_USER_EMAIL: "githubpub@todandlorna.com"
+
+  # GitHub token for pushing version commits
+  GITHUB_TOKEN: "${secret:tnl-site/github:token}"
