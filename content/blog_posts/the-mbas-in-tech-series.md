@@ -2,7 +2,7 @@
 Author: 'Tod Hansmann'
 Title: 'The MBAs-in-Tech Series'
 PostedDate: 'Sat Oct 25 13:30:00 MST 2025'
-Tags: ['software engineering','rants', 'mbas-in-tech']
+Tags: ['software-engineering', 'rants', 'mbas-in-tech']
 Hook: "<p>MBAs may be the worst tech influences possible, and every investor that disagrees can take some time to reflect on how their perspective is probably based on rent-seeking behavior. We'll get there.</p>"
 ---
 ## The Problem with MBAs
