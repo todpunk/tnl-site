@@ -1,0 +1,15 @@
+name: pr-merge-workflow
+description: "Version bump and trigger build on PR merge to main"
+triggers:
+  events:
+    - pull_request_merged
+  branches:
+    - main
+job:
+  image: 10.16.0.1:5000/public/reactorcide/runnerbase:dev
+  command: "python3 /job/src/.reactorcide/jobs/scripts/pr-merge-workflow.py"
+  timeout: 1800
+environment:
+  GIT_USER_NAME: "Tod Hansmann (automation)"
+  GIT_USER_EMAIL: "githubpub@todandlorna.com"
+  GITHUB_TOKEN: "${secret:tnl-site/github:token}"
