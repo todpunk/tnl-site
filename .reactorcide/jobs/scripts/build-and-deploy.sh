@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+cleanup() { kill %1 2>/dev/null || true; wait 2>/dev/null || true; }
+trap cleanup EXIT
+
 echo "================================================"
 echo "TNL Site Build and Deploy"
 echo "================================================"
