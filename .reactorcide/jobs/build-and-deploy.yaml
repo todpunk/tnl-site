@@ -1,10 +1,6 @@
 name: build-and-deploy
 description: "Build Docker image and deploy to Kubernetes via Helm"
-triggers:
-  events:
-    - push
-  branches:
-    - main
+triggers: {}
 job:
   image: 10.16.0.1:5000/public/reactorcide/runnerbase:dev
   command: "bash /job/src/.reactorcide/jobs/scripts/build-and-deploy.sh"
