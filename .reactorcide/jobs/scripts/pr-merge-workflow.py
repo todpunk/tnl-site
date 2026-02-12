@@ -59,17 +59,19 @@ def download_semver_tags():
         return
 
     print("Downloading semver-tags...")
-    run_command([
-        "wget", "-q",
-        "https://github.com/catalystsquad/semver-tags/releases/download/v0.3.5/semver-tags.tar.gz",
-        "-O", "-"
-    ], capture=False)
-    # Actually do the download properly
     subprocess.run(
-        "wget -q https://github.com/catalystsquad/semver-tags/releases/download/v0.3.5/semver-tags.tar.gz -O - | tar -xz",
+        "curl -fsSL https://github.com/catalystsquad/semver-tags/releases/download/v0.3.5/semver-tags.tar.gz | tar -xz",
         shell=True,
         check=True
     )
+
+
+def parse_yaml_value(output: str, key: str) -> str:
+    """Parse a simple YAML key: value from semver-tags output."""
+    for line in output.splitlines():
+        if line.startswith(f"{key}:"):
+            return line.split(":", 1)[1].strip().strip('"').strip("'")
+    return ""
 
 
 def run_semver_tags() -> tuple[bool, str]:
@@ -80,25 +82,11 @@ def run_semver_tags() -> tuple[bool, str]:
     result = run_command(["./semver-tags", "run"])
     output = result.stdout
 
-    # Parse YAML output with yq
-    published = subprocess.run(
-        ["yq", "-P", ".New_release_published"],
-        input=output,
-        capture_output=True,
-        text=True,
-        check=True
-    ).stdout.strip()
-
+    published = parse_yaml_value(output, "New_release_published")
     if published != "true":
         return False, ""
 
-    new_tag = subprocess.run(
-        ["yq", "-P", ".New_release_git_tag"],
-        input=output,
-        capture_output=True,
-        text=True,
-        check=True
-    ).stdout.strip()
+    new_tag = parse_yaml_value(output, "New_release_git_tag")
 
     # Remove 'v' prefix if present
     new_version = new_tag.lstrip("v")
