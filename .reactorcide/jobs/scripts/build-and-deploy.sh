@@ -23,29 +23,31 @@ echo "================================================"
 # Setup environment
 export HOME="${HOME:-/root}"
 export XDG_RUNTIME_DIR=/tmp/run-root
-mkdir -p "$XDG_RUNTIME_DIR" "$HOME/.docker"
+LOCAL_BIN="$HOME/.local/bin"
+mkdir -p "$XDG_RUNTIME_DIR" "$HOME/.docker" "$LOCAL_BIN"
+export PATH="$LOCAL_BIN:$PATH"
 
 # Install buildctl if not present
 if ! command -v buildctl &> /dev/null; then
     echo "Installing buildkit..."
     BUILDKIT_VERSION=0.17.3
     curl -fsSL "https://github.com/moby/buildkit/releases/download/v${BUILDKIT_VERSION}/buildkit-v${BUILDKIT_VERSION}.linux-amd64.tar.gz" -o /tmp/buildkit.tar.gz
-    tar -xzf /tmp/buildkit.tar.gz -C /usr/local
+    tar -xzf /tmp/buildkit.tar.gz --strip-components=1 -C "$LOCAL_BIN"
     rm /tmp/buildkit.tar.gz
 fi
 
 # Install helm if not present
 if ! command -v helm &> /dev/null; then
     echo "Installing helm..."
-    curl -fsSL https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
+    curl -fsSL https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | USE_SUDO=false HELM_INSTALL_DIR="$LOCAL_BIN" bash
 fi
 
 # Install kubectl if not present
 if ! command -v kubectl &> /dev/null; then
     echo "Installing kubectl..."
     KUBECTL_VERSION=$(curl -fsSL https://dl.k8s.io/release/stable.txt)
-    curl -fsSL "https://dl.k8s.io/release/${KUBECTL_VERSION}/bin/linux/amd64/kubectl" -o /usr/local/bin/kubectl
-    chmod +x /usr/local/bin/kubectl
+    curl -fsSL "https://dl.k8s.io/release/${KUBECTL_VERSION}/bin/linux/amd64/kubectl" -o "$LOCAL_BIN/kubectl"
+    chmod +x "$LOCAL_BIN/kubectl"
 fi
 
 # For internal registry (insecure HTTP)

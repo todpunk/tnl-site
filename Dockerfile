@@ -1,7 +1,7 @@
 FROM python:slim as builder
 
 WORKDIR /build
-RUN pip install pysocha
+RUN pip install pysocha typing_extensions
 COPY . .
 
 RUN python -m pysocha build -c tnl_config.yaml
