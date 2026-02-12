@@ -5,7 +5,7 @@ is_home: true
 <section id="one">
     <div class="container">
         <header class="major">
-            <h2>Tod and Lorna .com</h2>
+            <h2>Tod and Lorna Dot Com!</h2>
             <p>Our (mostly Tod's) fiddly site.</p>
         </header>
         <p>This is a blog and whatever else we want to throw up here, which isn't anything at the moment.</p>
