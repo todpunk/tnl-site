@@ -9,6 +9,7 @@ This workflow handles the CI/CD pipeline when a PR is merged to main:
 
 Triggered by: GitHub webhook on PR merge to main
 """
+import json
 import subprocess
 import sys
 import os
@@ -51,6 +52,10 @@ def setup_git():
             f"https://x-access-token:{github_token}@github.com/todpunk/tnl-site.git"
         ])
 
+    # Unshallow clone and fetch tags (runner uses shallow clone by default)
+    run_command(["git", "fetch", "--unshallow"], check=False)
+    run_command(["git", "fetch", "--tags"])
+
 
 def download_semver_tags():
     """Download the semver-tags tool."""
@@ -66,29 +71,26 @@ def download_semver_tags():
     )
 
 
-def parse_yaml_value(output: str, key: str) -> str:
-    """Parse a simple YAML key: value from semver-tags output."""
-    for line in output.splitlines():
-        if line.startswith(f"{key}:"):
-            return line.split(":", 1)[1].strip().strip('"').strip("'")
-    return ""
-
-
 def run_semver_tags() -> tuple[bool, str]:
     """
     Run semver-tags and parse the results.
     Returns: (has_new_release, new_version)
     """
-    result = run_command(["./semver-tags", "run"])
-    output = result.stdout
+    result = run_command(["./semver-tags", "run", "--output_json"])
+    output = result.stdout.strip()
 
-    published = parse_yaml_value(output, "New_release_published")
-    if published != "true":
+    # Find the JSON object in output (skip any log lines)
+    data = {}
+    for line in reversed(output.splitlines()):
+        line = line.strip()
+        if line.startswith("{"):
+            data = json.loads(line)
+            break
+
+    if data.get("New_release_published") != "true":
         return False, ""
 
-    new_tag = parse_yaml_value(output, "New_release_git_tag")
-
-    # Remove 'v' prefix if present
+    new_tag = data.get("New_release_git_tag", "")
     new_version = new_tag.lstrip("v")
     return True, new_version
 
@@ -123,7 +125,6 @@ def trigger_build_deploy(new_version: str):
         print(f"Triggered build-and-deploy job for version {new_version}")
     else:
         # Write trigger file manually
-        import json
         trigger_data = {
             "type": "trigger_job",
             "jobs": [{
