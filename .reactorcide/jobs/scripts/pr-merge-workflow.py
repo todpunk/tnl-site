@@ -56,6 +56,9 @@ def setup_git():
     run_command(["git", "fetch", "--unshallow"], check=False)
     run_command(["git", "fetch", "--tags"])
 
+    # Runner checks out by SHA (detached HEAD) — switch to main so we can push
+    run_command(["git", "checkout", "main"])
+
 
 def download_semver_tags():
     """Download the semver-tags tool."""
