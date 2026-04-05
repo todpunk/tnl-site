@@ -43,4 +43,4 @@ What I think is interesting is that we tend to ask "what would the balanced thin
 
 We need multiple stupid answers to see how the overall result can be smarter. What I would like less of is how awesome your value is compared to other values. What I would like more of is how your value optimization has added to the craft of software for users. If your language is ideal for you and you can't make something people love with it, you're in Haskell or something equally pointless. If you can make something people love but you can't do it without any sort of efficiency, you're a marketer cosplaying as a programmer, and I hope that open source eats your career.
 
-We need more playing in the stupid languages, but productive play. [Competitive cooperation](/tnl-blog/competitive-cooperation-thoughts.html), but for more efficient and loved software.
+We need more playing in the stupid languages, but productive play. [Competitive cooperation](/tnlblog/competitive-cooperation-initial-thoughts.html), but for more efficient and loved software.
