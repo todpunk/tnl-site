@@ -9,7 +9,7 @@ Hook: "<p>The battlecry of burnout \"experts\" is don't be overworked, set bound
 
 Put simply, burnout is a loss of meaning. The _symptoms_ can be feeling overworked, lack of motivation, irritability, all the usual things we hear about. When we are burned out, we are in survival mode just trying to get through the workday, and on the weekends we feel spent so enjoying them is super difficult. If you don't work a Monday through Friday the effects are the same, just replace your days off with the weekend.
 
-I've been burned out. I put too much into a company that then got sold to an Australian company (nothing wrong with Australian companies, just happens to be relevant that it wasn't local) that upended everything I had worked on over the previous 4 years. It's kind of funny now, but at the time, I sat in two different "sync" meetings, one with IT and one with Engineering (both groups I helped run) where the new CEO who was in theory technical stated, and I am quoting him word for word, "we don't need IT, we have Dropbox."
+I've been burned out. I put too much into a company that then got sold to an Australian company (nothing wrong with Australian companies, just happens to be relevant that it wasn't local) that upended everything I had worked on over the previous 4 years. It's kind of funny now, but at the time, [I sat in two different "sync" meetings](/tnlblog/the-only-definition-of-regret-that-matters.html), one with IT and one with Engineering (both groups I helped run) where the new CEO who was in theory technical stated, and I am quoting him word for word, "we don't need IT, we have Dropbox."
 
 Up until that point I had worked many a 60 hour week, was up at all hours of the night talking with customers around the world every month, and was not enjoying life. Those words weren't a problem, but they illustrate an issue that you can probably guess undid the joys I was latched onto for this effort.
 
@@ -39,7 +39,7 @@ For some, this is most accessible as "a cause" or something related. A purpose m
 
 Meaning is different. Motivation is useless. What's worth the _slog_? I'll tell you, if my wife fell ill I would be there, whatever that means in this case, as long as it took. I'm sure there's nuance there, but I would not abandon her. That's not universally relatable, but I happen to find a great deal I would endure for her sake. We _all_ have things we would endure pain for. Maybe not _any_ pain, and maybe not without reprieve. That's less relevant than the fact that there's something out there you'd be so enamored with that you'd endure _more_ pain than average for it.
 
-You know how I know? Most of us would do it for some form of drugs, because chemical addiction is real and biological. The mechanism is there. The psychology is something we'd like to pretend is different, but you have things you'd identify as worth working 12 hour days for, and you'd not only be satisfied but _proud_ of the effort. It might not be worth finding it, but it's there.
+You know how I know? Most of us would do it for some form of drugs, because chemical addiction is real and biological. The mechanism is there. The psychology is something we'd like to pretend is different, but you have things you'd identify as worth working 12 hour days for, and [you'd not only be satisfied but _proud_ of the effort](/tnlblog/competitive-cooperation-initial-thoughts.html). It might not be worth finding it, but it's there.
 
 We need to talk about what options and tradeoffs are really there.
 

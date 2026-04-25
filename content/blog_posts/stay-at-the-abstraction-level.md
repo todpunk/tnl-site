@@ -2,7 +2,7 @@
 Author: 'Tod Hansmann'
 Title: 'Stay at the Abstraction Level'
 PostedDate: 'Sat Oct 25 11:30:00 MST 2025'
-Tags: ['engineering','rants', 'software']
+Tags: ['engineering','rants', 'software', 'opinions']
 Hook: "<p>Programmers of all skill level have a tendency that bites us all: thinking they know how something should work. It makes some sense, we're there to know all the things we can to manage complexity and evaluate how well something solves a given problem. We even have a term for differentiating when someone is asking for help with a solution vs the problem they're actually trying to solve, it's called the X Y problem. We just don't tend to counter our own hubris with this notion.</p>"
 ---
 ## The Stupidity of Knowing
@@ -27,7 +27,7 @@ This is as if a mechanic installed a wire reading the temperature of the exhaust
 
 Every API contract has two parts. The easy path, and the power user path. The power user path is developed after the easy path, over time, as use cases evolve and real needs arise to handle, so you add a flag to enable some obscure thing, like adding a turbocharger to a specific make/model of vehicle. It's a wild thing. All sorts of mature software does this. You don't know most of the flags for `sed` at all, and you don't need to, but you've probably had to do something weird once or twice. You likewise probably don't know how to do a pivot table in Excel unless you have to do a lot of Excel reports, in which case I wonder why you're reading this, but that's the mechanic knowing the vehicle's capabilities.
 
-What you don't do is compile your own patch to `sed` and deploy it to your fleet of servers because you use it in a deployment script and really needed that extra feature.
+What you don't do is [compile your own patch](/tnlblog/less-indirection-is-better.html) to `sed` and deploy it to your fleet of servers because you use it in a deployment script and really needed that extra feature.
 
 Except we totally do that all the time because we're fools.
 
@@ -39,9 +39,9 @@ Just get over ourselves. We aren't smarter than the library or module author. Es
 
 The abstraction was made that way for a reason. There's all sorts of abstractions we don't cross over from, and the vast, vast majority of the time we don't need to cross over any of the ones we just happen to know how. We were too busy wondering if we could to ask if we should.
 
-If we try to conform to the API contract, and the other side honors that API contract, we have less maintenance burden. I was just at the GoWest conference yesterday and the point was well made in a panel discussion that the Go standard library should be the thing we reach for most of the time because the Go team have been very good about not breaking that contract so you won't have to update code against it, making upgrading Go for security fixes and performance improvements that much easier.
+If we try to [conform to the API contract](/tnlblog/api-contracts-are-everything.html), and the other side honors that API contract, we have less maintenance burden. I was just at the GoWest conference yesterday and the point was well made in a panel discussion that the Go standard library should be the thing we reach for most of the time because the Go team have been very good about not breaking that contract so you won't have to update code against it, making upgrading Go for security fixes and performance improvements that much easier.
 
-How old is your runtime? How easy are your upgrades? Those are smells if you can't upgrade them by changing a number in a config. Most of us can't. Most of us smell. I'm guilty, too, don't worry, but that doesn't make it right to not improve.
+How old is your runtime? [How easy are your upgrades?](/tnlblog/it-works-is-never-enough.html) Those are smells if you can't upgrade them by changing a number in a config. Most of us can't. Most of us smell. I'm guilty, too, don't worry, but that doesn't make it right to not improve.
 
 Stay at the level of abstraction. Use an automatic transmission, and if we're a power user, use a manual, but don't add that fuel injector modification. If it's actually useful, it will be in an after market fuel injector. If our bespoke feature is that useful, we can do the work of getting it patched upstream. If not, throw it out and throw out our hubris about it as well.
 

@@ -11,11 +11,11 @@ There's the typical questions of identity that creep up into the technical discu
 
 The philosophical stuff aside, my friends would still recognize me, my family would still be mine, but for most of us, if a single corporation decides to ban our account, it also bans our entire online identity, or much of it.
 
-This is well known. What's not well known is this is totally solvable, with incentives for all parties, but we keep screwing it up because of ego.
+This is well known. What's not well known is this is totally solvable, with incentives for all parties, but [we keep screwing it up because of ego](/tnlblog/tech-is-the-revolutionary-equalizer.html).
 
 ## Accounts are not Identities
 
-First, I am not my Facebook account. Obviously. However, right now, my Facebook account and my Facebook identity are one and the same. If my Facebook account is banned, or taken over, I can no longer identify as my Facebook identity. There's also some trust lost, like even my mom would look at the Rayban Ad some bot would post on my feed with a great deal of suspicion, and then I could never post an actual product to my feed without suspicion from all of my friends.
+First, I am not my Facebook account. Obviously. However, right now, [my Facebook account and my Facebook identity are one and the same](/tnlblog/anonymity-vs-pseudonymity.html). If my Facebook account is banned, or taken over, I can no longer identify as my Facebook identity. There's also some trust lost, like even my mom would look at the Rayban Ad some bot would post on my feed with a great deal of suspicion, and then I could never post an actual product to my feed without suspicion from all of my friends.
 
 Spam problems hurt everyone, but the point here is not that the hacking problems are real, it is that we build association between the person and the online identity just like we do with the person and the government identity, but the identity and the person are overlapping, not equal. This extends to the account. If someone else shows up to my wife with my body, if the brain is different, she's built the association with my body and my identity, and she will trust that body until suspicion is raised.
 

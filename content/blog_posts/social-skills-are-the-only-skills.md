@@ -19,7 +19,7 @@ Tesla would have been nothing without either of them. Tesla was a tool that need
 
 I know a couple people that are "sales" people by some respects, or deal makers, or at the very least they'll get people together and get them to talk to each other about the things they could do for each other. That sort of thing isn't necessarily compensated, I do that in my meetup groups and online communities sometimes. I don't earn a commission, but it's important work. If I didn't understand software or computers, the social skills would still be valuable on their own. If I didn't have them, my software engineering skills would require being attached to someone with them.
 
-All kinds of social skills on their own are valued. Customer Service is just social skills coupled with some process training. Some kinds of Sales people are just laughably stupid at most of their life, but they make tons of money by being social powerhouses. That's probably negative, but the point is that's all they have. It's all they need.
+All kinds of social skills on their own are valued. [Customer Service is just social skills coupled with some process training](/tnlblog/tough-job-markets-need-tough-talk.html). Some kinds of Sales people are just laughably stupid at most of their life, but they make tons of money by being social powerhouses. That's probably negative, but the point is that's all they have. It's all they need.
 
 ## People are not Fake, You're Just Lazy
 
@@ -31,7 +31,7 @@ If you're weird, and the entire reason we have the concept of weird or gross or 
 
 People expect you won't bring them disease, theft, violence, or undue burden. There's probably endless items we could add to that list, but suffice to say we all want to be with good people, not bad people, and our definitions of those are being renegotiated constantly.
 
-When you do the social dance that gets called "fake" so often, you are actually doing the only thing in socializing that matters. You are saying, "I understand how to be with you, what makes us all safe together, and what trust is built on over time." You can layer in the weird that isn't a detriment later.
+When you do the social dance that gets called "fake" so often, you are actually [doing the only thing in socializing that matters](/tnlblog/the-subtle-line-between-manipulation-and-influence.html). You are saying, "I understand how to be with you, what makes us all safe together, and what trust is built on over time." You can layer in the weird that isn't a detriment later.
 
 ## Socially Acceptable or Not
 
@@ -51,7 +51,7 @@ That may seem extreme, but it's not. It's one of the more straightforward known 
 
 ## Not Taking Social Skills Seriously is Just Weakness
 
-We all benefit from the social contract. It's hard for some people because they're lazy. It's called being comfortable. All growth comes from conflict, and because not all conflict leads to growth it's really easy to dismiss. They look at the psychological pain of having to do this dance they don't understand and instead of working through that discomfort and building trust bridges and relationships like the majority of us do, they skipped those classes so they think it's stupid.
+[We all benefit from the social contract](/tnlblog/strong-feelings-disqualify-us-from-the-debate.html). It's hard for some people because they're lazy. It's called being comfortable. All growth comes from conflict, and because not all conflict leads to growth it's really easy to dismiss. They look at the psychological pain of having to do this dance they don't understand and instead of working through that discomfort and building trust bridges and relationships like the majority of us do, they skipped those classes so they think it's stupid.
 
 Social skills aren't hard. They just aren't. It's like saying riding a bike is hard, or learning to eat is hard. For very few people these are true. For everyone else, what an asinine assumption. Common, but asinine.
 

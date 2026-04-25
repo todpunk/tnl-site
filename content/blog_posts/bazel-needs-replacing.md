@@ -2,7 +2,7 @@
 Author: 'Tod Hansmann'
 Title: 'Bazel Needs Replacing'
 PostedDate: 'Sat May 31 17:30:00 MST 2025'
-Tags: ['bazel','rants','software','technology', 'angry']
+Tags: ['bazel','rants','software','technology','engineering','angry','opinions']
 Hook: "<p>Bazel is the by far the most complete and popular monorepo build tool we have. It also is utter garbage and needs to be replaced.</p>"
 ---
 
@@ -26,7 +26,7 @@ I could teach you how to use these tools as a junior devops engineer, soup to nu
 
 Bazel is something I've been learning for the last 6 months and I still have little to no clue how it actually works at a deep level. The jargon is confusing, they've invented words for all sorts of stuff that isn't consistent and gets tacked onto because it doesn't make sense otherwise. There's "rules" but there's also "repository rules" that are different, and "macros" which are rules that make rules but they themselves aren't rules? Every rule has an implementation that's different but takes some of the same stuff shuffled around because... I'm not sure why. Uses of rules are targets or something, depending on context.
 
-Look, it doesn't matter, I'm sure I'm also "technically" incorrect on some of that, and it's infuriating because I know that and yet _it doesn't add any value so I don't care_. Bazel is just layers upon layers of horseshit that doesn't need to be there to accomplish its goals. It is overly complex for no reason. I want much of what it offers, but it has to be more approachable. The ecosystem isn't better either. Half the problem is I don't want to be stuck with Bazel, because it's like being an OracleDB expert, who fucking cares?
+Look, it doesn't matter, I'm sure I'm also "technically" incorrect on some of that, and it's infuriating because I know that and yet _it doesn't add any value so I don't care_. Bazel is just [layers upon layers of horseshit](/tnlblog/less-indirection-is-better.html) that doesn't need to be there to accomplish its goals. It is overly complex for no reason. I want much of what it offers, but it has to be more approachable. The ecosystem isn't better either. Half the problem is I don't want to be stuck with Bazel, because it's like being an OracleDB expert, who fucking cares?
 
 ## The Bazel Ecosystem Can't Get it Together
 
@@ -52,11 +52,11 @@ Gazelle makes that whole process easier, but is also several more layers of blac
 
 ## OK, I've Ranted Enough, Let's Talk Solutions
 
-My most controversial statement about Bazel is probably that I don't think you need to go granular as much as Google thinks. C and Java devs have a perspective, and it's born from blinders. There's no need for that granularity in a Go or Python app, those ecosystems have facilities to manage that themselves (maybe they're awful, but they do have them, usually several). If make is adding value, it can continue to add value to the C codebase, and the larger build system (Bazel in this case, but anything really) should be able to lean on that.
+My most controversial statement about Bazel is probably that I don't think you need to go granular as much as Google thinks. [C and Java devs have a perspective, and it's born from blinders](/tnlblog/your-programming-language-is-stupid.html). There's no need for that granularity in a Go or Python app, those ecosystems have facilities to manage that themselves (maybe they're awful, but they do have them, usually several). If make is adding value, it can continue to add value to the C codebase, and the larger build system (Bazel in this case, but anything really) should be able to lean on that.
 
-Moreover we should strive to use the standard definitions of projects for their codebases. Above I mentioned go.mod and go.sum, which Bazel doesn't use (Gazelle does, so that Bazel doesn't have to). Your editor doesn't understand Bazel, so now you have to maintain both. Just don't do that. Let Python use pyproject.toml and stop trying to do a complicated pip compile setup to convert to a requirements file that you then feed to Gazelle before you can ever even run Bazel.
+Moreover we should strive to use the standard definitions of projects for their codebases. Above I mentioned go.mod and go.sum, which Bazel doesn't use (Gazelle does, so that Bazel doesn't have to). [Your editor doesn't understand Bazel, so now you have to maintain both](/tnlblog/stay-at-the-abstraction-level.html). Just don't do that. Let Python use pyproject.toml and stop trying to do a complicated pip compile setup to convert to a requirements file that you then feed to Gazelle before you can ever even run Bazel.
 
-It should be easier to query the build graph to answer basic questions like "what depends on this thing?" without having that granularity. You can separate the dependency graph data structure and the individual implementations of how to extract that information from the given setup. That API contract is more important than controlling the world (this philosophy is a key reason I can never work at Google, but that's ok, Google is awful at engineering).
+It should be easier to query the build graph to answer basic questions like "what depends on this thing?" without having that granularity. You can separate the dependency graph data structure and the individual implementations of how to extract that information from the given setup. [That API contract is more important than controlling the world](/tnlblog/api-contracts-are-everything.html) (this philosophy is a key reason I can never work at Google, but that's ok, Google is awful at engineering).
 
 Specifically, if I have a C lib in one directory, and a Python app that depends on that C lib, the C plugin should load that dependency graph tree into the larger structure, and the Python plugin should load its piece. Use placeholders for unknowns before the graph is considered complete. I don't care if it's differently implemented, the point is this is very possible. I don't need everything native Bazel to enable this. Hell, I say "Python" and it could be setuptools based for one plugin, poetry for another, uv for another, or a mix. The point is the API contract means I can do _whatever_ in a given language and make that easy without having to even involve the core build orchestration.
 

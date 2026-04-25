@@ -2,7 +2,7 @@
 Author: 'Tod Hansmann'
 Title: "The Two Kinds of Value"
 PostedDate: 'Tue Feb 22 11:05:00 MST 2025'
-Tags: ["life","career","society","parenting"]
+Tags: ["life","careers","society","parenting"]
 Hook: "<p>Everyone in business talks about \"creating value\" in various contexts, but what the hell does that mean? Well, there are two kinds, and you're either creating it directly or not, and with others or not. It can be complicated, but ultimately we can focus on ourselves and understand it all just fine.</p>"
 ---
 ## The Two Kinds
@@ -33,8 +33,8 @@ The vagueness of value is often the best kind of value. Humans hate ambiguity, b
 
 ## What Do We _Do?_
 
-The goal is to provide value some way to some audience. Some of that has to get paid for. Most of it, hopefully. It might not be with money, and it may just be with gratitude, but unpaid for value is very bad. The trick for us all is to find what kinds of value we can provide in both useful and intrinsic ways, preferably combined like that wonderful wooden clock. Start with who your audience is. They're the ones paying. Make sure it's a good audience. An audience that will cut off a contract unexpectedly is a bad audience. An audience that doesn't pay is a bad audience. Let the "favors" people rot. Their annoyance at you for not doing them a favor is the tantrum of a child and can be similarly ignored. Ignore everything about them if you can, in fact.
+The goal is to provide value some way to some audience. Some of that has to get paid for. Most of it, hopefully. It might not be with money, and it may just be with gratitude, but [unpaid for value is very bad](/tnlblog/the-mbas-in-tech-series.html). The trick for us all is to find what kinds of value we can provide in both useful and intrinsic ways, preferably combined like that wonderful wooden clock. Start with who your audience is. They're the ones paying. Make sure it's a good audience. An audience that will cut off a contract unexpectedly is a bad audience. An audience that doesn't pay is a bad audience. Let the "favors" people rot. Their annoyance at you for not doing them a favor is the tantrum of a child and can be similarly ignored. Ignore everything about them if you can, in fact.
 
-Always be expanding your audience, or audiences in many cases. Note that I'm not saying customers. Customers is a specific kind of transaction, and that's not the point. Your place in society isn't about customers, it's about value. You need an audience to create value for. Nothing more, nothing less. If you can survive and find happiness providing the value to your audience, you're completing your life's tasks. If you can do that as part of a group, you're doing even better. Comedians are solo entertainers, but they are colleagues with each other and share the craft and hold each other accountable when they take from the craft more than they give, like stealing jokes might be seen as.
+[Always be expanding your audience](/tnlblog/tough-job-markets-need-tough-talk.html), or audiences in many cases. Note that I'm not saying customers. Customers is a specific kind of transaction, and that's not the point. Your place in society isn't about customers, it's about value. You need an audience to create value for. Nothing more, nothing less. If you can survive and find happiness providing the value to your audience, you're completing your life's tasks. If you can do that as part of a group, you're doing even better. Comedians are solo entertainers, but they are colleagues with each other and share the craft and hold each other accountable when they take from the craft more than they give, like stealing jokes might be seen as.
 
 Now you don't have an excuse in not knowing what value is. Create value for your audience.

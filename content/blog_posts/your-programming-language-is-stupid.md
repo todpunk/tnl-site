@@ -2,7 +2,7 @@
 Author: 'Tod Hansmann'
 Title: 'Your Programming Language is Stupid'
 PostedDate: 'Sun Sep 14 8:30:00 MST 2025'
-Tags: ['rants','engineering']
+Tags: ['rants','engineering','opinions']
 Hook: "<p>So many programmers I know have their favorite language, and they really, really want to sell me on the virtues of it. The problem, every time, is that their programming language is stupid, and so is yours. It doesn't matter what it is, it's a stupid one. I know, because there aren't any programming languages that aren't stupid. There's no panacea, no golden balanced ratio. Especially yours.</p>"
 ---
 ## Values
@@ -23,7 +23,7 @@ Programming languages are like this, because of course they would be, given they
 
 ## What Your Language Says About You
 
-I know plenty of people that can't stand YAML. It seems to boil down 99% of the time to aesthetics, and nobody who hates YAML would agree with that statement. Alas, it's still true. "there's this problem or that problem" is accurate enough to be compelling, but if you think more broadly you can see that usually "this problem" or "that problem" are common and avoiding them is an optimiziation for those, while also asking for others. Everything in engineering is trade-offs.
+I know plenty of people that can't stand YAML. It seems to boil down 99% of the time to aesthetics, and nobody who hates YAML would agree with that statement. Alas, it's still true. "there's this problem or that problem" is accurate enough to be compelling, but if you think more broadly you can see that usually "this problem" or "that problem" are common and avoiding them is an optimiziation for those, while also asking for others. [Everything in engineering is trade-offs](/tnlblog/less-indirection-is-better.html).
 
 When someone tells me they hate YAML, it tells me nothing about YAML, but gives me a great deal of information about them. It's the same when someone tells me they love a given programming language. Let's use Ruby as an example, because Ruby zealots don't have feelings.
 
@@ -41,6 +41,6 @@ There's this human problem where we say "I have a list of N things and they all 
 
 What I think is interesting is that we tend to ask "what would the balanced thing look like" which is the entirely wrong question. There is no balanced thing. There are only balanced things. If you don't have the group, you don't have the balance, because you need multiple perspectives to see what the bigger picture even is. Why might you use Python over Rust? Why might you use C instead of Zig or Ocaml? Are those even comparable? Why should we hate Java?
 
-We need multiple stupid answers to see how the overall result can be smarter. What I would like less of is how awesome your value is compared to other values. What I would like more of is how your value optimization has added to the craft of software for users. If your language is ideal for you and you can't make something people love with it, you're in Haskell or something equally pointless. If you can make something people love but you can't do it without any sort of efficiency, you're a marketer cosplaying as a programmer, and I hope that open source eats your career.
+We need multiple stupid answers to see how the overall result can be smarter. What I would like less of is how awesome your value is compared to other values. What I would like more of is how your value optimization has added to the craft of software for users. If your language is ideal for you and [you can't make something people love with it](/tnlblog/it-works-is-never-enough.html), you're in Haskell or something equally pointless. If you can make something people love but you can't do it without any sort of efficiency, you're a marketer cosplaying as a programmer, and I hope that open source eats your career.
 
 We need more playing in the stupid languages, but productive play. [Competitive cooperation](/tnlblog/competitive-cooperation-initial-thoughts.html), but for more efficient and loved software.
