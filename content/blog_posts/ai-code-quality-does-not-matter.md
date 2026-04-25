@@ -2,7 +2,7 @@
 Author: 'Tod Hansmann'
 Title: 'AI Code Quality Does Not Matter as a Topic'
 PostedDate: 'Sun Aug 31 8:58:00 MST 2025'
-Tags: ['AI','engineering', 'rants']
+Tags: ['ai','engineering', 'rants', 'opinions']
 Hook: "<p>AI coding assistants have lots of people discussing lots of perspectives on a lot of topics. I think that's great, even when many of them are a waste of time, because we have to figure out which topics are a waste of time. I posit that the topic of AI Code Quality doesn't matter. It's easy to see where code quality does and doesn't matter, and an AI tool being involved doesn't change anything.</p>"
 ---
 ## Does Quality Matter at All?
@@ -13,7 +13,7 @@ Code Quality is more ambiguous because we don't know anything about code quality
 
 ## AI Code Quality
 
-However, I don't think AI coding assistants change this. There are aspects of code quality that are ostensibly there to save time, and AI tools that are there to save time may essentially make the time-versus-quality trade-off different. The quality, though, doesn't matter to that. If the AI produces "low quality" code in that the code requires more time to refactor or it's tech debt that we'll have to pay down later, or whatever, then if the AI is saving time it makes that "quality" being low or high matter significantly less.
+However, I don't think AI coding assistants change this. There are aspects of code quality that are ostensibly there to save time, and AI tools that are there to save time may essentially make the time-versus-quality trade-off different. The quality, though, doesn't matter to that. If the AI produces "low quality" code in that the code requires more time to refactor or [it's tech debt that we'll have to pay down later](/tnlblog/it-works-is-never-enough.html), or whatever, then if the AI is saving time it makes that "quality" being low or high matter significantly less.
 
 Some aspects of code quality still matter, at least to you or me. Great. Does the AI producing this code matter then? Constrain the output better. I have been learning Rust and using Claude Code to write [csilgen](https://github.com/catalystcommunity/csilgen) and there's two things it essentially gets wrong with every edit. First, it doesn't put the variable inside the curly brackets of format strings. Second, it almost always has an import that isn't used.
 
@@ -25,7 +25,7 @@ Of course the answer is yes, there's exceptions that linting can't handle. Still
 
 AI didn't change this, though. I don't care about the quality of anyone's utility scripts they use for themselves. I do care if you're trying to get those scripts built into some software package my mom is going to end up using.
 
-This is made way easier if you just imagine AI code tools as interns. Does the quality of the intern's output matter? If it does, correct it as they go, find the prompting to prevent it, etc. If they can't learn, as many a human can't, constrain their output with tools. The fact that it's an LLM doing the production just changes the wall-clock time. You're still responsible for their output just like the intern shouldn't be putting anything in production that you aren't taking responsibility and ownership for.
+This is made way easier if you just imagine AI code tools as interns. Does the quality of the intern's output matter? If it does, correct it as they go, find the prompting to prevent it, etc. If they can't learn, as many a human can't, [constrain their output with tools](/tnlblog/stay-at-the-abstraction-level.html). The fact that it's an LLM doing the production just changes the wall-clock time. You're still responsible for their output just like the intern shouldn't be putting anything in production that you aren't taking responsibility and ownership for.
 
 If the intern can push to production, is it the intern's fault when they create a mess? Maybe. Is it the intern's _responsibility_ to fix it? No. Never. Even if we make them do so, that's us taking responsibility by making them, they can't have the incentive to need to. They might, in fact, voluntarily do so, but it's still not their responsibility. Why on earth would I make an LLM responsible for code quality that matters?
 

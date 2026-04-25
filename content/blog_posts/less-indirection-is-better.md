@@ -2,7 +2,7 @@
 Author: 'Tod Hansmann'
 Title: "Less Indirection is Better"
 PostedDate: 'Tue Feb 22 14:03:00 MST 2025'
-Tags: ["rants","software","engineering","architecture"]
+Tags: ["rants","software","engineering","architecture","opinions"]
 Hook: "<p>In computing performance, direct instructions are fastest, but are difficult to program. In code, indirect seems elegant, but just ruins cognitive ability. The balance should lean towards directness. Indirection may not be bad, but it's only good in small quantities.</p>"
 ---
 ## The Core Assumption
@@ -27,7 +27,7 @@ I still hate it because over time, you're trying to join functionality and data 
 
 Now add in config files, xml, templating engines, shell scripts that fetch values from a secret store, etc, etc.
 
-It's not about what we do or don't like. It's about making something a joy to work in for the long haul, for all people that are going to do so. If that's just me, be it a personal project or a one-man open source project, great. The constraints are less, and my personal preferences can be more represented.
+It's not about what we do or don't like. It's about [making something a joy to work in for the long haul](/tnlblog/it-works-is-never-enough.html), for all people that are going to do so. If that's just me, be it a personal project or a one-man open source project, great. The constraints are less, and my personal preferences can be more represented.
 
 ## The Thing About Java
 
@@ -51,7 +51,7 @@ They all suck. All Infrastructure as Code solutions suck, for instance, so prefe
 
 Another important translation type is wrapping. Wrapping is actually good and needed, it's like the function that calls a bunch of other functions (which wasn't indirection, but this is like it). Sometimes it's providing critical functionality for the user, like a CLI that splats out a project. That's a wrapper around a clone and a template operation. I write cookie cutter templates sometimes. A CLI is a better experience, easy.
 
-The number of layers of translation is the hard bit. You want to avoid too many, because it becomes the Enterprise Java problem, except we have editors that help you do the Java bit quickly, and you can't with layers of translation. It's like a game of telephone. You lose meaning through the layers, even if the "word" you're searching on is the same. In fact, it's worse when the name of things stays the same, because naming things is already hard and now you're changing the context of the thing through every other layer.
+The number of layers of translation is the hard bit. You want to avoid too many, because it becomes the Enterprise Java problem, except we have editors that help you do the Java bit quickly, and [you can't with layers of translation](/tnlblog/stay-at-the-abstraction-level.html). It's like a game of telephone. You lose meaning through the layers, even if the "word" you're searching on is the same. In fact, it's worse when the name of things stays the same, because naming things is already hard and now you're changing the context of the thing through every other layer.
 
 A translation type that is always silly is tool abuse. My favorite is when projects write Makefiles and they're all `PHONY` targets that just call commands. Now I have to install Make when I already have a shell. "Oh, but shell's aren't cross-platform!" you say, incorrectly. I've been running Bash on Windows, Mac and Linux for over two decades. I can install Make and get one functionality that Make wasn't intended for, or I can install bash and open up a deep module of capability. That intent thing is key. Make is there to save work in a DAG. If your targets are all `PHONY` you're literally just writing the worst shell script.
 

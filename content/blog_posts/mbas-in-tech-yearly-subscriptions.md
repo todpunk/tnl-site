@@ -2,24 +2,24 @@
 Author: 'Tod Hansmann'
 Title: 'MBAs in Tech - Yearly Subscriptions'
 PostedDate: 'Sun Oct 26 14:30:00 MST 2025'
-Tags: ['software engineering','rants', 'mbas-in-tech']
+Tags: ['software-engineering','rants', 'mbas-in-tech', 'opinions']
 Hook: "<p>You shouldn't hate yearly subscriptions, but you should absolutely hate how they're done by some companies. You might be on the ball about them, having a list to check and evaluate, but grandma isn't, and that's how they get her.</p>"
 ---
 ## How a Yearly Subscription Works
 
 Often yearly subscriptions are given a discount for committed use. It adds to the economies of scale and startups can rely on counting you as a user for a year even if you used the product for 10 minutes and forget about it. Admittedly, I think if I forget about a subscription after a very short time, that's on me. Even 6 months in, the subscription is mine to waste and I know that. I made the commitment.
 
-What happens at the end is where the MBAs get involved.
+[What happens at the end is where the MBAs get involved](/tnlblog/the-mbas-in-tech-series.html).
 
 ## Do We Care About Users?
 
 Think about it from a user standpoint. When I have a yearly subscription coming up, I would like a notice that it's about to happen, because after a year it's hard to know when things will be coming up, when they'll actually get charged, and what weasel worded legalese is getting applied to the contract. We don't read those agreements, let alone put them in a planned book of "what is required of us and them" list. People tend to have to look up _how_ to cancel their gym memberships.
 
-So we'd all like that notice at the very least, so we can evaluate "oh, do I still use this at all?" kinds of questions. Of course, the reason we don't get those is because we will forget, and if they have a simple no refund policy, or if getting a refund has a high barrier, we'll just eat the few dollars to maybe even a few hundred every time we forget. Then we feel like, well, we paid for it, maybe we should give it a try again.
+So we'd all like that notice at the very least, so we can evaluate "oh, do I still use this at all?" kinds of questions. Of course, the reason we don't get those is because [we will forget](/tnlblog/the-subtle-line-between-manipulation-and-influence.html), and if they have a simple no refund policy, or if getting a refund has a high barrier, we'll just eat the few dollars to maybe even a few hundred every time we forget. Then we feel like, well, we paid for it, maybe we should give it a try again.
 
 Some MBA could read this and just self-justify instantly that they're giving the user a better incentive to use the product if they fell off, to join the family again and get back into it. Especially like those gym membership people, where they have that instant excuse that gyms are healthy so getting them to use it more is also healthy and good. No.
 
-## Aligned Incentives Always Win
+## [Aligned Incentives Always Win](/tnlblog/the-two-kinds-of-value.html)
 
 If I run a gym and I want customers to use the gym, I'm going to do two things. First, I'm going to say, the price is N a month, billed monthly. If you don't use the gym Y times a month, as tracked by check ins and checkouts, we charge N*3, prorated down for how much you meet that bar. I'm also going to be able to incentivize other hours as counting more towards that so I can spread usage around. It's win win because the incentives for customers are aligned to the incentives of the gym.
 

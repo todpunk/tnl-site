@@ -2,7 +2,7 @@
 Author: 'Tod Hansmann'
 Title: 'The Subtle Line Between Manipulation and Influence'
 PostedDate: 'Sat Oct 25 12:30:00 MST 2025'
-Tags: ['philosophy','life', 'rants']
+Tags: ['philosophy','life', 'rants', 'opinions']
 Hook: "<p>In many ways, all of social interaction is about getting someone else to do something for you. We like to think of ourselves as caring and altruistic, but without the feedback loop from others we are just telling ourselves that we are what we think we are, and with the feedback loop that's the actual thing we want from someone else.</p>"
 ---
 ## You Should Watch "Validation"
@@ -17,7 +17,7 @@ This has long made me ponder the question of what the differences of manipulatio
 
 ## Influence is the Same as Manipulation
 
-The mechanics of both are exactly the same. You provide inputs to others, they respond. That's it. Seems obscenely simple. Sometimes the inputs and responses are complicated. I provide inputs to my wife that make her smile. Is she smiling because of me, or because she chose to based on my input? Who is in control?
+[The mechanics of both are exactly the same](/tnlblog/social-skills-are-the-only-skills.html). You provide inputs to others, they respond. That's it. Seems obscenely simple. Sometimes the inputs and responses are complicated. I provide inputs to my wife that make her smile. Is she smiling because of me, or because she chose to based on my input? Who is in control?
 
 This is where I see typical discussions of the topic go. I think that's fun but useless. Philosophy can explore all sorts of routes of these questions, but if they aren't useful I don't think they're worth pursuing further. I don't think that's much of a stretch even if it can be fun to explore the more useless avenues. Sometimes discoveries are there. The point is we shouldn't talk about it like that.
 
@@ -25,7 +25,7 @@ Instead, think of yourself and how you want to the mechanism to play out on you.
 
 ## The Difference in The Subject
 
-I posit that the same action, the same input, can be both manipulative and influential. You can see this in telling someone the same advice as you tell others but someone is in a more vulnerable state and they key in too hard and you knew they would and they change their life. Salespeople that convince someone to spend money they don't have and the salesperson knows they don't have are manipulative. Salespeople that offer someone something and are turned down and simply move on are not. They're trying to influence, no doubt, but not manipulate. There's a lot of room between those two.
+I posit that the same action, the same input, can be both manipulative and influential. You can see this in telling someone the same advice as you tell others but someone is in a more vulnerable state and [they key in too hard and you knew they would](/tnlblog/strong-feelings-disqualify-us-from-the-debate.html) and they change their life. [Salespeople that convince someone to spend money they don't have](/tnlblog/mbas-in-tech-yearly-subscriptions.html) and the salesperson knows they don't have are manipulative. Salespeople that offer someone something and are turned down and simply move on are not. They're trying to influence, no doubt, but not manipulate. There's a lot of room between those two.
 
 I think there is a line about how desperate the subject is or how easily influenced they are. I think that's valuable insight. I also think that doesn't really paint the whole picture. A 12 year old takes their parents' credit card. If a salesperson sells something expensive to a 12 year old that they clearly don't need, that's manipulative. My aunt has the mentality of an 8-12 year old depending on the area (and I consider arguing about what to label her, but the internet is stupid and thinks they know better than our family, so we'll just avoid it). We love her dearly, but she could easily make such a mistake as children would even though she's getting elderly now. Would a salesperson selling her something expensive be manipulative at that point? Her idiosyncrasies signaling her mental capabilities are minor. She's quite childlike, but so are a whole host of adults with no deficiencies.
 

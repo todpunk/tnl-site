@@ -7,7 +7,7 @@ Hook: "<p>I have incepted a pattern at a few big tech companies that my friends 
 ---
 Originally I came up with this while working at Mobilsense. As a Python shop, they were updating to a newer codebase than the one they started in 2002, and considered a variety of things to migrate to. The short version is we had about I believe about 8,000 tests at the time, and they all ran in under 20 minutes on a single process running against postgres as the database. No mocking of databases.
 
-Sincerely, don't mock your database. In the age of containers especially you have no excuse, but it's also pretty easy to create a new DB from scratch. Do the work. Anyway, once you have that, how do you test against it when it's largely empty? This also isn't Python specific, but it's easy there. Let's go over it.
+[Sincerely, don't mock your database](/tnlblog/api-contracts-are-everything.html). In the age of containers especially you have no excuse, but it's also pretty easy to create a new DB from scratch. Do the work. Anyway, once you have that, how do you test against it when it's largely empty? This also isn't Python specific, but it's easy there. Let's go over it.
 
 ## Wait, Why?
 
@@ -39,7 +39,7 @@ Oh, and now you also have your test cases result data to base off of, and you ca
 
 ## Downsides
 
-There's two downsides. First, you will feel sad if your primary keys are all called `id` because now you have to likely have a map check in every `CreateStuff` to convert the `user_id` to the ORM's `id` field, and you will be eternally reminded of your poor choice. Second, you have to have done the work of properly maintaining your DB instead of just getting a schema dump from prod or something. You did version control your schema changes and keep them useful from bare minimum the whole time, right? Of course you did. (You can fix it if you didn't, but you will need to do that or you don't get valid DB tests out of this, back to your mocks that are also not valid DB tests, but you can still pretend. This blog article can't find you. Your better engineer friends might, sadly.)
+There's two downsides. First, you will feel sad if your primary keys are all called `id` because now you have to likely have a map check in every `CreateStuff` to convert the `user_id` to the ORM's `id` field, and you will be eternally reminded of your poor choice. Second, you have to have done the work of properly maintaining your DB instead of just getting a schema dump from prod or something. You did version control your schema changes and keep them useful from bare minimum the whole time, right? Of course you did. (You can fix it if you didn't, but [you will need to do that or you don't get valid DB tests](/tnlblog/it-works-is-never-enough.html) out of this, back to your mocks that are also not valid DB tests, but you can still pretend. This blog article can't find you. Your better engineer friends might, sadly.)
 
 I suppose you'll also not enjoy going back to codebases that don't. I've had that problem a long time. Tests are so much more painful when you can't just setup a data scenario and see if the function call gives you what you expected.
 
