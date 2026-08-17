@@ -1,5 +1,5 @@
 name: build-and-deploy
-image: containers.catalystsquad.com/public/reactorcide/runnerbase:dev
+image: containers.catalystsquad.com/public/reactorcide/runnerbase:latest
 capabilities:
   - docker
 source:

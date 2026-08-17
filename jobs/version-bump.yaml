@@ -1,5 +1,5 @@
 name: version-bump
-image: containers.catalystsquad.com/public/reactorcide/runnerbase:dev
+image: containers.catalystsquad.com/public/reactorcide/runnerbase:latest
 source:
   type: git
   url: https://github.com/todpunk/tnl-site.git

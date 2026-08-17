@@ -1,0 +1,13 @@
+id: tnl-site-version-deploy
+name: TNL site version deploy
+on:
+  events:
+    - push
+  branches:
+    - main
+paths:
+  include:
+    - content/extra_files/VERSION.txt
+jobs:
+  build-and-deploy:
+    job_file: build-and-deploy.yaml

@@ -1,15 +1,8 @@
 name: build-and-deploy
-description: "Build Docker image and deploy to Kubernetes via Helm"
-triggers:
-  events:
-    - push
-  branches:
-    - main
-paths:
-  include: ["content/extra_files/VERSION.txt"]
+description: Build the container image and deploy it with Helm.
 job:
-  image: 10.16.0.1:5000/public/reactorcide/runnerbase:dev
-  command: "bash /job/src/.reactorcide/jobs/scripts/build-and-deploy.sh"
+  image: containers.catalystsquad.com/public/reactorcide/runnerbase:latest
+  command: runnerlib run --job-command "bash /job/ci/.reactorcide/jobs/scripts/build-and-deploy.sh"
   timeout: 1800
   capabilities:
     - docker

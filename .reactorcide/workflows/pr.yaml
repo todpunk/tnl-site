@@ -1,0 +1,11 @@
+id: tnl-site-pr-checks
+name: TNL site pull request checks
+on:
+  events:
+    - pull_request_opened
+    - pull_request_updated
+  branches:
+    - main
+jobs:
+  build-test:
+    job_file: build-test.yaml

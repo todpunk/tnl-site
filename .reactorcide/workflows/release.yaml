@@ -1,0 +1,10 @@
+id: tnl-site-release
+name: TNL site release
+on:
+  events:
+    - pull_request_merged
+  branches:
+    - main
+jobs:
+  pr-merge-workflow:
+    job_file: pr-merge-workflow.yaml
