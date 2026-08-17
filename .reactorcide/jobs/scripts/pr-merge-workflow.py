@@ -1,28 +1,10 @@
 #!/usr/bin/env python3
-"""
-PR Merge Workflow for TNL Site
-
-This workflow handles the CI/CD pipeline when a PR is merged to main:
-1. Runs semver-tags to determine if there are releasable changes
-2. If changes exist, updates VERSION.txt and commits
-3. Triggers the build-and-deploy job
-
-Triggered by: GitHub webhook on PR merge to main
-"""
+"""Update the TNL site version after a pull request merges."""
 import json
+import os
 import subprocess
 import sys
-import os
 from pathlib import Path
-
-# Reactorcide workflow helpers
-try:
-    from workflow import trigger_job, flush_triggers, git_info, WorkflowContext
-except ImportError:
-    # Fallback for local testing
-    print("Warning: workflow module not available, running in standalone mode")
-    trigger_job = None
-    flush_triggers = None
 
 
 def run_command(cmd: list[str], check: bool = True, capture: bool = True) -> subprocess.CompletedProcess:
@@ -44,12 +26,23 @@ def setup_git():
     run_command(["git", "config", "--global", "user.name", git_user])
     run_command(["git", "config", "--global", "user.email", git_email])
 
-    # Setup auth if token provided
+    # Set up authentication when a token is available.
     github_token = os.environ.get("GITHUB_TOKEN")
     if github_token:
+        askpass = Path("/tmp/tnl-site-git-askpass.sh")
+        askpass.write_text(
+            "#!/usr/bin/env sh\n"
+            "case \"$1\" in\n"
+            "  *Username*) printf '%s\\n' 'x-access-token' ;;\n"
+            "  *) printf '%s\\n' \"$GITHUB_TOKEN\" ;;\n"
+            "esac\n"
+        )
+        askpass.chmod(0o700)
+        os.environ["GIT_ASKPASS"] = str(askpass)
+        os.environ["GIT_TERMINAL_PROMPT"] = "0"
         run_command([
             "git", "remote", "set-url", "origin",
-            f"https://x-access-token:{github_token}@github.com/todpunk/tnl-site.git"
+            "https://github.com/todpunk/tnl-site.git",
         ])
 
     # Unshallow clone and fetch tags (runner uses shallow clone by default)
@@ -67,11 +60,13 @@ def download_semver_tags():
         return
 
     print("Downloading semver-tags...")
-    subprocess.run(
-        "curl -fsSL https://github.com/catalystsquad/semver-tags/releases/download/v0.3.5/semver-tags.tar.gz | tar -xz",
-        shell=True,
-        check=True
-    )
+    archive = "/tmp/semver-tags.tar.gz"
+    run_command([
+        "curl", "-fsSL",
+        "https://github.com/catalystsquad/semver-tags/releases/download/v0.3.5/semver-tags.tar.gz",
+        "-o", archive,
+    ], capture=False)
+    run_command(["tar", "-xzf", archive], capture=False)
 
 
 def run_semver_tags() -> tuple[bool, str]:
@@ -115,34 +110,6 @@ def commit_and_push(new_version: str):
     run_command(["git", "push"])
 
 
-def trigger_build_deploy(new_version: str):
-    """Trigger the build-and-deploy job."""
-    if trigger_job is not None:
-        trigger_job(
-            "build-and-deploy",
-            env={"VERSION": new_version},
-            depends_on=[],
-            condition="all_success"
-        )
-        flush_triggers()
-        print(f"Triggered build-and-deploy job for version {new_version}")
-    else:
-        # Write trigger file manually
-        trigger_data = {
-            "type": "trigger_job",
-            "jobs": [{
-                "job_name": "build-and-deploy",
-                "env": {"VERSION": new_version},
-                "source_type": "git",
-                "source_url": "https://github.com/todpunk/tnl-site.git",
-                "source_ref": "main"
-            }]
-        }
-        trigger_file = Path("/job/triggers.json")
-        trigger_file.write_text(json.dumps(trigger_data, indent=2))
-        print(f"Wrote trigger file for build-and-deploy job")
-
-
 def main() -> int:
     print("=" * 60)
     print("TNL Site PR Merge Workflow")
@@ -172,9 +139,6 @@ def main() -> int:
 
     # Commit and push
     commit_and_push(new_version)
-
-    # Trigger build and deploy
-    trigger_build_deploy(new_version)
 
     print("\n" + "=" * 60)
     print(f"Version bump complete: {new_version}")

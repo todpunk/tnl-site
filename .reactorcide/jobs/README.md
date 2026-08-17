@@ -1,72 +1,60 @@
-# Reactorcide CI/CD Jobs
+# Reactorcide workflows
 
-This directory contains the reactorcide eval job definitions for building and deploying the TNL site.
+Reactorcide reads the native workflow files in `.reactorcide/workflows/`.
+Each workflow uses the job files in this directory.
 
-## Architecture
+## Workflows
 
-```
-GitHub Webhook (push / pull_request)
-    -> reactorcide.catalystsquad.com/api/v1/webhooks/github
-    -> Validates HMAC signature
-    -> Creates eval job
-         -> Reads .reactorcide/jobs/*.yaml
-         -> Matches against event type + branch
-         -> Creates child jobs:
-              push to main         -> build-and-deploy
-              PR merged to main    -> pr-merge-workflow -> version bump + triggers build
-```
+- `pr.yaml` runs `build-test` when a pull request opens or changes.
+- `release.yaml` runs `pr-merge-workflow` when a pull request merges.
+- `version-push.yaml` runs `build-and-deploy` when `VERSION.txt` changes on
+  `main`.
 
-## Jobs
+The merge job updates `VERSION.txt` and pushes the change. The push event then
+starts the deploy workflow. This event boundary makes the deploy job use the
+new commit.
 
-### build-and-deploy.yaml
+## Secret references
 
-Triggers on push to main. Builds the Docker image and deploys to Kubernetes:
-- Builds Docker image using buildkit
-- Pushes to internal registry at `10.16.0.1:5000/private/todpunk/tnl-site`
-- Deploys to Kubernetes using Helm
+The jobs use these secret references:
 
-### pr-merge-workflow.yaml
+- `${secret:tnl-site/github:token}`
+- `${secret:tnl-site/registry:user}`
+- `${secret:tnl-site/registry:password}`
+- `${secret:tnl-site/k8s:kubeconfig}`
 
-Triggers on PR merge to main. Handles version bumping and triggers a build:
-- Runs `semver-tags` to determine if there are releasable changes
-- Updates `content/extra_files/VERSION.txt`
-- Commits and pushes the version bump
-- The resulting push to main triggers `build-and-deploy`
+Grant each secret to the exact workflow node name that uses it. Use
+`pr-merge-workflow` for the GitHub token. Use `build-and-deploy` for the
+registry and Kubernetes secrets.
 
-## Required Secrets
+## Local validation
 
-Set these in reactorcide (both CLI and API) before running jobs:
+Use the public evaluator image. Dry-run mode validates the workflow without a
+push or a deployment.
 
 ```bash
-# Registry credentials
-reactorcide secrets set tnl-site/registry password "your-registry-password"
+reactorcide run-local \
+  --dry-run \
+  --event pull_request_opened \
+  --eval-image containers.catalystsquad.com/public/reactorcide/runnerbase:latest \
+  .reactorcide/workflows/pr.yaml
 
-# Kubernetes config
-reactorcide secrets set tnl-site/k8s kubeconfig "$(cat ~/.kube/config)"
+reactorcide run-local \
+  --dry-run \
+  --event pull_request_updated \
+  --eval-image containers.catalystsquad.com/public/reactorcide/runnerbase:latest \
+  .reactorcide/workflows/pr.yaml
 
-# GitHub token (for version commits)
-reactorcide secrets set tnl-site/github token "ghp_your_token_here"
-```
+reactorcide run-local \
+  --dry-run \
+  --event pull_request_merged \
+  --eval-image containers.catalystsquad.com/public/reactorcide/runnerbase:latest \
+  .reactorcide/workflows/release.yaml
 
-## Registry Configuration
-
-- **Internal Registry**: `http://10.16.0.1:5000` (HTTP, insecure)
-- **Image Path**: `private/todpunk/tnl-site`
-- **External Registry**: `containers.catalystsquad.com` (HTTPS)
-
-The job pushes to the internal registry, which is accessible from within the Kubernetes cluster.
-
-## Manual Job Execution
-
-To run a job manually:
-
-```bash
-# Run build and deploy
-reactorcide run-local .reactorcide/jobs/build-and-deploy.yaml
-
-# Run PR merge workflow (version bump)
-reactorcide run-local .reactorcide/jobs/pr-merge-workflow.yaml
-
-# Dry run to see what would execute
-reactorcide run-local --dry-run .reactorcide/jobs/build-and-deploy.yaml
+reactorcide run-local \
+  --dry-run \
+  --event push \
+  --changed-file content/extra_files/VERSION.txt \
+  --eval-image containers.catalystsquad.com/public/reactorcide/runnerbase:latest \
+  .reactorcide/workflows/version-push.yaml
 ```

@@ -4,7 +4,7 @@ outputDir: "generated"
 templatesDir: "templates"
 siteTitle: "Tod and Lorna .com"
 siteAddress: "https://todandlorna.com/"
-descending: True,
+descending: true
 defaultExtension: ".html"
 startPage: "index.html"
 pageConfig:
