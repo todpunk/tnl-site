@@ -5,7 +5,9 @@ job:
   command: runnerlib run --job-command "bash /job/ci/.reactorcide/jobs/scripts/build-and-deploy.sh"
   timeout: 1800
   capabilities:
-    - docker
+    - builder
+  run_local:
+    user: host
 environment:
   REGISTRY_INTERNAL: "10.16.0.1:5000"
   REGISTRY_INTERNAL_PATH: "private/todpunk/tnl-site"

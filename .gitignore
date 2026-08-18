@@ -178,5 +178,8 @@ ehthumbs.db
 
 *.pyc
 
+# Reactorcide local workflow output
+reactorcide-workflow-summary.json
+
 # To allow for local changes without committing accidentally
 skaffold.yaml
