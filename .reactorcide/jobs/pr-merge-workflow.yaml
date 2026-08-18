@@ -4,6 +4,8 @@ job:
   image: containers.catalystsquad.com/public/reactorcide/runnerbase:latest
   command: runnerlib run --job-command "python3 /job/ci/.reactorcide/jobs/scripts/pr-merge-workflow.py"
   timeout: 1800
+  run_local:
+    user: host
 environment:
   GIT_USER_NAME: "Tod Hansmann (automation)"
   GIT_USER_EMAIL: "githubpub@todandlorna.com"

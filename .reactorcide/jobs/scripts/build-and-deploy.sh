@@ -20,13 +20,13 @@ LOCAL_BIN="$HOME/.local/bin"
 mkdir -p "$HOME/.docker" "$LOCAL_BIN"
 export PATH="$LOCAL_BIN:$PATH"
 
-# Install docker CLI if not present
-if ! command -v docker &> /dev/null; then
-    echo "Installing docker CLI..."
-    DOCKER_VERSION=27.5.1
-    curl -fsSL "https://download.docker.com/linux/static/stable/x86_64/docker-${DOCKER_VERSION}.tgz" -o /tmp/docker.tgz
-    tar -xzf /tmp/docker.tgz --strip-components=1 -C "$LOCAL_BIN" docker/docker
-    rm /tmp/docker.tgz
+# Install the BuildKit client if it is not present
+if ! command -v buildctl &> /dev/null; then
+    echo "Installing the BuildKit client..."
+    BUILDKIT_VERSION=0.17.3
+    curl -fsSL "https://github.com/moby/buildkit/releases/download/v${BUILDKIT_VERSION}/buildkit-v${BUILDKIT_VERSION}.linux-amd64.tar.gz" -o /tmp/buildkit.tar.gz
+    tar -xzf /tmp/buildkit.tar.gz --strip-components=1 -C "$LOCAL_BIN" bin/buildctl
+    rm /tmp/buildkit.tar.gz
 fi
 
 # Install crane for pushing to insecure registry
@@ -77,15 +77,15 @@ EOF
     echo "Registry authentication configured"
 fi
 
-# Wait for Docker daemon (provided by 'docker' capability)
-echo "Waiting for Docker daemon..."
+# Wait for the BuildKit sidecar
+echo "Waiting for BuildKit..."
 for i in $(seq 1 30); do
-    if docker info >/dev/null 2>&1; then
-        echo "Docker daemon is ready"
+    if buildctl debug info >/dev/null 2>&1; then
+        echo "BuildKit is ready"
         break
     fi
     if [[ $i -eq 30 ]]; then
-        echo "ERROR: Docker daemon not ready after 30 seconds"
+        echo "ERROR: BuildKit is not ready after 30 seconds"
         exit 1
     fi
     sleep 1
@@ -93,11 +93,12 @@ done
 
 # Build image
 echo "Building image: ${INTERNAL_IMAGE}:${VERSION}"
-docker build -t "${INTERNAL_IMAGE}:${VERSION}" .
-
-# Save and push via crane (supports insecure registries)
 IMAGE_TAR="/tmp/image.tar"
-docker save "${INTERNAL_IMAGE}:${VERSION}" -o "${IMAGE_TAR}"
+buildctl build \
+    --frontend dockerfile.v0 \
+    --local context=. \
+    --local dockerfile=. \
+    --output "type=docker,name=${INTERNAL_IMAGE}:${VERSION},dest=${IMAGE_TAR}"
 
 echo "Pushing image via crane..."
 crane push --insecure "${IMAGE_TAR}" "${INTERNAL_IMAGE}:${VERSION}"
