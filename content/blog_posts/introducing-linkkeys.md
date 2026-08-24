@@ -10,7 +10,7 @@ Personally, I hate creating new accounts. I also hate logging in somewhere with 
 
 More broadly? Bots and spam suck. Digital Identity from the government is broken as all get. Child safety is in the wrong space. These are very real problems, and we haven't even gotten to AI making bots and spam cheaper and easier.
 
-We need to solve this, and it's going to take technologists working with normal people to do it.
+We need to solve this, and it's going to take technologists working with non-techies (most people) to do it.
 
 ## The Tool
 
