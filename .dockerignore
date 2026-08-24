@@ -1,0 +1,5 @@
+.git
+.venv
+generated
+reactorcide-workflow-summary.json
+semver-tags

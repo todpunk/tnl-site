@@ -1,4 +1,13 @@
 {% extends "base.jinja2" %}
+{% from "social_meta.jinja2" import render_social_metadata %}
+{% block social_metadata %}
+	{{ render_social_metadata(
+		'Articles tagged ' ~ tag,
+		'Tod and Lorna articles tagged ' ~ tag ~ '.',
+		'/tnlblog/' ~ tag_file ~ page_num ~ '.html',
+		image_alt='Tod and Lorna logo'
+	) }}
+{% endblock %}
 {% block title %}Articles from TnL with tag: {{ tag }}{% endblock %}
 {% block content %}
 

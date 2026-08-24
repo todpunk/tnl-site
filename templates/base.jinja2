@@ -4,11 +4,20 @@
 	pixelarity.com @pixelarity
 	License: pixelarity.com/license
 -->
-<html>
+<html lang="en" prefix="og: https://ogp.me/ns# article: https://ogp.me/ns/article#">
 	<head>
 		<title>{% block title %}{% endblock %}</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		{% block social_metadata %}
+		{% from "social_meta.jinja2" import render_social_metadata %}
+		{{ render_social_metadata(
+			'Tod and Lorna .com',
+			"Tod and Lorna's personal blog and home on the internet.",
+			'/',
+			image_alt='Tod and Lorna logo'
+		) }}
+		{% endblock %}
 		<!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="/assets/css/main.css" />
 		<link rel="stylesheet" href="/assets/css/tnl.css" />
@@ -30,6 +39,21 @@
 						<li><a href="/" {% if is_home_not_supported %}class="active"{% endif %}>Home</a></li>
 						<li><a href="/tnlblog/listing1.html" {% if is_blog_not_supported %}class="active"{% endif %}>TnL Blog</a></li>
 					</ul>
+					<div class="site_search" data-search-component>
+						<form action="https://duckduckgo.com/" method="get" data-search-form data-search-limit="5">
+							<input name="sites" type="hidden" value="todandlorna.com" />
+							<label for="site_search_input">Search the site</label>
+							<div class="site_search_controls">
+								<input id="site_search_input" name="q" type="search" autocomplete="off" required />
+								<button type="submit">Search</button>
+							</div>
+						</form>
+						<div class="site_search_output" data-search-output hidden>
+							<div data-search-status role="status" aria-live="polite"></div>
+							<ol data-search-results></ol>
+							<a href="/search/" data-search-more>See all results</a>
+						</div>
+					</div>
 				</nav>
 				<footer>
 					<ul class="icons">
@@ -70,6 +94,8 @@
 		<script src="/assets/js/util.js"></script>
 		<!--[if lte IE 8]><script src="/assets/js/ie/respond.min.js"></script><![endif]-->
 		<script src="/assets/js/main.js"></script>
+		<script src="/assets/js/search.js" type="module"></script>
 		{{ extra_scripts }}
+		{% block extra_footer %}{% endblock %}
 	</body>
 </html>
