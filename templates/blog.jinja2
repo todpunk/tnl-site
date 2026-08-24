@@ -1,4 +1,21 @@
 {% extends "base.jinja2" %}
+{% from "social_meta.jinja2" import render_social_metadata %}
+{% block social_metadata %}
+	{% set has_article_image = Image is defined and Image %}
+	{% set article_image = Image if has_article_image else '/images/social-preview.png' %}
+	{% set article_image_alt = ImageAlt|default(Title ~ ' preview image', true) if has_article_image else 'Tod and Lorna logo' %}
+	{{ render_social_metadata(
+		Title,
+		Hook,
+		'/tnlblog/' ~ slugify,
+		image=article_image,
+		content_type='article',
+		author=Author,
+		published_time=PostedDate.isoformat(),
+		tags=Tags,
+		image_alt=article_image_alt
+	) }}
+{% endblock %}
 {% block title %} {{ Title }}{% endblock %}
 {% block content %}
                             <section id="one">

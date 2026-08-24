@@ -1,5 +1,15 @@
 {% extends "base.jinja2" %}
-{% block title %}{{ title }}{% endblock %}
+{% from "social_meta.jinja2" import render_social_metadata %}
+{% block social_metadata %}
+	{{ render_social_metadata(
+		Title,
+		Description|default("Tod and Lorna's personal blog and home on the internet.", true),
+		CanonicalPath|default('/', true),
+		image=Image|default('/images/social-preview.png', true),
+		image_alt=ImageAlt|default('Tod and Lorna logo', true)
+	) }}
+{% endblock %}
+{% block title %}{{ Title }}{% endblock %}
 {% block content %}
 	{{ content }}
 {% endblock %}

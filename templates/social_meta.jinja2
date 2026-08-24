@@ -1,0 +1,45 @@
+{% macro render_social_metadata(title, description, path, image='/images/social-preview.png', content_type='website', author=none, published_time=none, tags=none, image_alt=none) %}
+{% set site_root = 'https://todandlorna.com' %}
+{% if path.startswith('http://') or path.startswith('https://') %}
+{% set canonical_url = path %}
+{% elif path.startswith('/') %}
+{% set canonical_url = site_root ~ path %}
+{% else %}
+{% set canonical_url = site_root ~ '/' ~ path %}
+{% endif %}
+{% if image.startswith('http://') or image.startswith('https://') %}
+{% set image_url = image %}
+{% elif image.startswith('/') %}
+{% set image_url = site_root ~ image %}
+{% else %}
+{% set image_url = site_root ~ '/' ~ image %}
+{% endif %}
+		<meta name="description" content="{{ description|striptags|trim|e }}" />
+		<link rel="canonical" href="{{ canonical_url|e }}" />
+		<meta property="og:title" content="{{ title|e }}" />
+		<meta property="og:description" content="{{ description|striptags|trim|e }}" />
+		<meta property="og:type" content="{{ content_type|e }}" />
+		<meta property="og:url" content="{{ canonical_url|e }}" />
+		<meta property="og:image" content="{{ image_url|e }}" />
+		<meta property="og:site_name" content="Tod and Lorna .com" />
+		<meta property="og:locale" content="en_US" />
+{% if image_alt %}
+		<meta property="og:image:alt" content="{{ image_alt|e }}" />
+{% endif %}
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="{{ title|e }}" />
+		<meta name="twitter:description" content="{{ description|striptags|trim|e }}" />
+		<meta name="twitter:image" content="{{ image_url|e }}" />
+{% if image_alt %}
+		<meta name="twitter:image:alt" content="{{ image_alt|e }}" />
+{% endif %}
+{% if author %}
+		<meta name="author" content="{{ author|e }}" />
+{% endif %}
+{% if published_time %}
+		<meta property="article:published_time" content="{{ published_time|e }}" />
+{% endif %}
+{% for tag in tags or [] %}
+		<meta property="article:tag" content="{{ tag|e }}" />
+{% endfor %}
+{% endmacro %}

@@ -1,4 +1,13 @@
 {% extends "base.jinja2" %}
+{% from "social_meta.jinja2" import render_social_metadata %}
+{% block social_metadata %}
+	{{ render_social_metadata(
+		'Authors of Articles from TnL',
+		'Browse Tod and Lorna articles by author.',
+		'/tnlblog/authors.html',
+		image_alt='Tod and Lorna logo'
+	) }}
+{% endblock %}
 {% block title %}Authors of Articles from TnL{% endblock %}
 {% block content %}
 

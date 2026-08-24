@@ -7,6 +7,14 @@ siteAddress: "https://todandlorna.com/"
 descending: true
 defaultExtension: ".html"
 startPage: "index.html"
+search:
+    - name: "site"
+      provider: "pagefind"
+      path: "search"
+      template: "search.jinja2"
+      include: ["posts", "pages"]
+      options:
+          indexCode: false
 pageConfig:
     pageTitle: "Tod and Lorna .com"
     pageDefaultTemplate: "page.jinja2"

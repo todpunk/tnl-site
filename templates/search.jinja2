@@ -1,0 +1,35 @@
+{% extends "base.jinja2" %}
+{% from "social_meta.jinja2" import render_social_metadata %}
+{% block social_metadata %}
+	{{ render_social_metadata(
+		'Search Tod and Lorna',
+		'Search the Tod and Lorna website and blog.',
+		'/search/',
+		image_alt='Tod and Lorna logo'
+	) }}
+{% endblock %}
+{% block title %}Search Tod and Lorna{% endblock %}
+{% block content %}
+	<section id="one">
+		<div class="container">
+			<header class="major">
+				<h2>Search Tod and Lorna</h2>
+			</header>
+			<div data-search-component>
+				<form class="search_page_form" action="https://duckduckgo.com/" method="get" data-search-form data-search-limit="20" data-search-url>
+					<input name="sites" type="hidden" value="todandlorna.com" />
+					<label for="search_input" class="visually_hidden">Search terms</label>
+					<input id="search_input" name="q" type="search" autocomplete="off" autofocus required />
+					<button type="submit">Search</button>
+				</form>
+				<noscript>
+					<p>This form uses DuckDuckGo when JavaScript is off.</p>
+				</noscript>
+				<div class="search_page_output" data-search-output hidden>
+					<div data-search-status role="status" aria-live="polite"></div>
+					<ol data-search-results></ol>
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock %}
