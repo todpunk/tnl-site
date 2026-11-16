@@ -1,7 +1,7 @@
 FROM python:slim as builder
 
 WORKDIR /build
-RUN pip install "pysocha[search-pagefind] @ https://github.com/catalystcommunity/pysocha/archive/fab6f606a5a160964ebe16389637a80de62b4b1d.tar.gz"
+RUN pip install "pysocha[search-pagefind] @ https://github.com/catalystcommunity/pysocha/archive/f2ea95db17cc7f0e983358920b62c35afa77901e.tar.gz"
 COPY . .
 
 RUN python -m pysocha build -c tnl_config.yaml
